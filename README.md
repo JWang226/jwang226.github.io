@@ -1,6 +1,6 @@
 # Jinzhao Wang's website
 
-A static research website for [jwang226.github.io](https://jwang226.github.io), with research, publications, a blog, and a printable CV. The current affiliation is **Research Scientist at Zyphra**.
+A static research website for [wangjinzhao.com](https://wangjinzhao.com), with research, publications, a blog, and a printable CV. The current affiliation is **Research Scientist at Zyphra**.
 
 ## Develop locally
 
@@ -50,8 +50,8 @@ Use an ISO date (`YYYY-MM-DD`), a unique filename with lowercase letters and hyp
 2. Push this source project to its `main` branch, including `package-lock.json` and `.github/workflows/pages.yml`.
 3. In the repository, open **Settings → Pages → Build and deployment**, then set **Source** to **GitHub Actions**.
 4. Open **Actions → Deploy GitHub Pages** and run the workflow, or push another commit to `main`.
-5. After the workflow succeeds, visit [jwang226.github.io](https://jwang226.github.io). Later pushes to `main` build, check, and deploy automatically.
+5. After the workflow succeeds, visit [wangjinzhao.com](https://wangjinzhao.com). Later pushes to `main` build, check, and deploy automatically.
 
 The workflow installs the locked dependencies, builds into `dist/`, checks the output, uploads it with GitHub's official `upload-pages-artifact` action, and publishes with `deploy-pages`. Its deployment job uses the `github-pages` environment and the required Pages and identity-token permissions. No personal access token or separate hosting service is needed.
 
-For deployment settings and troubleshooting, see GitHub's [custom Pages workflows documentation](https://docs.github.com/en/pages/getting-started-with-github-pages/using-custom-workflows-with-github-pages) and [user-site setup instructions](https://docs.github.com/en/pages/getting-started-with-github-pages/creating-a-github-pages-site). If using a custom domain later, update `data/site.json` and configure the domain in the repository's Pages settings.
+For deployment settings and troubleshooting, see GitHub's [custom Pages workflows documentation](https://docs.github.com/en/pages/getting-started-with-github-pages/using-custom-workflows-with-github-pages) and [user-site setup instructions](https://docs.github.com/en/pages/getting-started-with-github-pages/creating-a-github-pages-site). The primary custom domain is `wangjinzhao.com`; configure it in the repository's Pages settings and keep `data/site.json` in sync if it changes.
