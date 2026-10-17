@@ -1,0 +1,209 @@
+{
+  "verifiedOn": "2026-10-17",
+  "method": "Started from the user-provided CV_JinzhaoWang.pdf and verified public metadata against primary arXiv abstracts, journal records, and official conference or seminar archives. Summaries are original short descriptions. Year is the journal publication or acceptance year when verified; preprintYear preserves the original arXiv year.",
+  "identity": {
+    "orcid": "https://orcid.org/0000-0002-6985-6574",
+    "github": "https://github.com/JWang226",
+    "notes": "The new Holevo and QMDL arXiv papers directly link to JWang226 proof repositories. Excluded same-name researchers in photonics, fluid dynamics, chemistry and biology."
+  },
+  "correctionsToCV": [
+    "What exactly does Bekenstein bound? was published in Quantum 9, 1664 in 2025, rather than the 2023 preprint year shown in the CV.",
+    "The refined quantum extremal surface prescription was published in Quantum 6, 655 (2022), not JHEP.",
+    "Confidence Polytopes in Quantum State Tomography was published in Physical Review Letters in 2019; its preprint appeared in 2018.",
+    "The public title for the CV entry On the Horizon Molecules in Causal Sets is On the horizon entropy of a causal set.",
+    "The public title of the CV small-sphere paper is The small sphere limit of quasilocal energy in higher dimensions along lightcone cuts.",
+    "The CV listed Asymptotically optimal cloning of mixed states as forthcoming with Wang, Purcell, Fei and Hayden. The publicly available related paper arXiv:2609.35986 has the title Asymptotically Optimal Mixed-State Cloning and authors Jiani Fei and Jinzhao Wang. This site uses only the verified public metadata and does not claim these manuscripts are identical.",
+    "Free entropy and quantum minimum description length is now public as arXiv:2610.06741 (2026), accompanied by Quantum minimum description of density matrices arXiv:2610.06742.",
+    "Free mutual information was accepted by PRX Quantum on 2026-09-10 under the expanded journal title Free mutual information and higher-point out-of-time-ordered correlators. No volume or article number was available in the verified accepted-paper record."
+  ],
+  "classificationNotes": [
+    "Research topics are editorial groupings rather than arXiv categories.",
+    "The 2016 Chinese-character paper is shown under Algorithms & language and has no AI/LLM topic tag, because it is a topological sorting paper rather than an LLM paper.",
+    "No AI/LLM research publications were independently verified; this should not be filled with invented publications.",
+    "Local gravitational energy in higher dimensions is a short preprint; arXiv:2001.08485 is explicitly described on arXiv as its extended version."
+  ],
+  "publications": [
+    {
+      "id": "2610.06741",
+      "sources": [
+        "https://arxiv.org/abs/2610.06741",
+        "https://github.com/JWang226/Quantum-Minimum-Description-Length",
+        "https://pirsa.org/25060025"
+      ]
+    },
+    {
+      "id": "2610.06742",
+      "sources": [
+        "https://arxiv.org/abs/2610.06742",
+        "https://github.com/JWang226/Quantum-Minimum-Description-Length"
+      ]
+    },
+    {
+      "id": "2609.35986",
+      "sources": [
+        "https://arxiv.org/abs/2609.35986"
+      ]
+    },
+    {
+      "id": "2609.18222",
+      "sources": [
+        "https://arxiv.org/abs/2609.18222",
+        "https://github.com/JWang226/Holevo-Additivity-Gap"
+      ]
+    },
+    {
+      "id": "2509.13406",
+      "sources": [
+        "https://arxiv.org/abs/2509.13406",
+        "https://doi.org/10.1103/wt7l-6385",
+        "https://qipconference.org/2026/sessions/many_body_theory_4/",
+        "https://indico.global/event/16432/contributions/156308/",
+        "https://pirsa.org/25060012"
+      ]
+    },
+    {
+      "id": "2510.07418",
+      "sources": [
+        "https://arxiv.org/abs/2510.07418"
+      ]
+    },
+    {
+      "id": "2412.19885",
+      "sources": [
+        "https://arxiv.org/abs/2412.19885",
+        "https://doi.org/10.21468/SciPostPhys.19.4.095"
+      ]
+    },
+    {
+      "id": "2309.07436",
+      "sources": [
+        "https://arxiv.org/abs/2309.07436",
+        "https://doi.org/10.22331/q-2025-03-20-1664",
+        "https://qip.iaqi.org/2024/site/mypage.aspx%3Fpid=271&lang=en&sid=1522.html",
+        "https://www.youtube.com/watch?v=mxEgJJTgrck",
+        "https://www.ias.edu/video/what-exactly-does-bekenstein-bound",
+        "https://pirsa.org/23100090"
+      ]
+    },
+    {
+      "id": "2405.13886",
+      "sources": [
+        "https://arxiv.org/abs/2405.13886",
+        "https://doi.org/10.22331/q-2024-12-12-1564",
+        "https://sites.google.com/view/geoflow/may-2025-meeting"
+      ]
+    },
+    {
+      "id": "2209.10546",
+      "sources": [
+        "https://arxiv.org/abs/2209.10546",
+        "https://doi.org/10.1007/JHEP10(2023)040",
+        "https://www.ggi.infn.it/single-workshop.php?id=367",
+        "https://www.youtube.com/watch?v=hEerpPZ5tcg"
+      ]
+    },
+    {
+      "id": "2105.05892",
+      "sources": [
+        "https://arxiv.org/abs/2105.05892",
+        "https://doi.org/10.22331/q-2022-02-16-655",
+        "https://www2.yukawa.kyoto-u.ac.jp/~soken.editorial/sokendenshi/vol37/1/2021/program-soryushiron-kenkyu.html",
+        "https://www2.yukawa.kyoto-u.ac.jp/~qft.web/2021/slides/wang-jinzhao.pdf"
+      ]
+    },
+    {
+      "id": "2009.14197",
+      "sources": [
+        "https://arxiv.org/abs/2009.14197",
+        "https://doi.org/10.1063/5.0058984"
+      ]
+    },
+    {
+      "id": "2110.14653",
+      "sources": [
+        "https://arxiv.org/abs/2110.14653",
+        "https://pirsa.org/22030034",
+        "https://yauc.seu.edu.cn/2024/0110/c27831a478671/page.htm"
+      ]
+    },
+    {
+      "id": "2012.06212",
+      "sources": [
+        "https://arxiv.org/abs/2012.06212",
+        "https://doi.org/10.1088/1361-6382/abe957"
+      ]
+    },
+    {
+      "id": "2007.13192",
+      "sources": [
+        "https://arxiv.org/abs/2007.13192",
+        "https://doi.org/10.1088/1361-6382/abc274"
+      ]
+    },
+    {
+      "id": "2007.00030",
+      "sources": [
+        "https://arxiv.org/abs/2007.00030",
+        "https://doi.org/10.1103/PhysRevD.102.066009",
+        "https://aarms.math.ca/event/atlantic-gr-seminar-2020-11-25/"
+      ]
+    },
+    {
+      "id": "2001.08485",
+      "sources": [
+        "https://arxiv.org/abs/2001.08485",
+        "https://doi.org/10.1088/1361-6382/ab719d"
+      ]
+    },
+    {
+      "id": "1909.11973",
+      "sources": [
+        "https://arxiv.org/abs/1909.11973",
+        "https://arxiv.org/abs/2001.08485"
+      ]
+    },
+    {
+      "id": "1904.01034",
+      "sources": [
+        "https://arxiv.org/abs/1904.01034",
+        "https://doi.org/10.1103/PhysRevD.100.064020"
+      ]
+    },
+    {
+      "id": "1808.09988",
+      "sources": [
+        "https://arxiv.org/abs/1808.09988",
+        "https://doi.org/10.1103/PhysRevLett.122.190401"
+      ]
+    },
+    {
+      "id": "1602.08742",
+      "sources": [
+        "https://arxiv.org/abs/1602.08742",
+        "https://doi.org/10.1371/journal.pone.0163623"
+      ]
+    }
+  ],
+  "additionalPrimarySources": [
+    {
+      "url": "https://journals.aps.org/prxquantum/accepted/10.1103/wt7l-6385",
+      "supports": "PRX Quantum accepted title, authors, acceptance date, and DOI"
+    },
+    {
+      "url": "https://qit.ethz.ch/publications/journal-articles.html",
+      "supports": "Published titles and journal details for small-sphere energy, causal-set action and horizon entropy"
+    },
+    {
+      "url": "https://quantum-journal.org/papers/q-2025-03-20-1664/",
+      "supports": "Bekenstein title, authors, publication year and journal details"
+    },
+    {
+      "url": "https://quantum-journal.org/papers/q-2022-02-16-655/",
+      "supports": "Refined QES publication in Quantum"
+    },
+    {
+      "url": "https://journals.plos.org/plosone/article?id=10.1371/journal.pone.0163623",
+      "supports": "Chinese-character publication title, authors, date and journal details"
+    }
+  ]
+}

@@ -1,0 +1,13 @@
+{
+  "name": "jinzhao-wang-website",
+  "version": "1.0.0",
+  "private": true,
+  "type": "module",
+  "scripts": {
+    "build": "node scripts/build.mjs",
+    "check": "node scripts/check.mjs",
+    "serve": "node scripts/serve.mjs"
+  },
+  "engines": { "node": ">=22" },
+  "dependencies": { "marked": "^16.4.1" }
+}

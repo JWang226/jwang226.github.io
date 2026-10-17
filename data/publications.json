@@ -1,0 +1,546 @@
+[
+  {
+    "id": "2610.06741",
+    "title": "Free entropy and quantum minimum description length",
+    "authors": [
+      "Patrick Hayden",
+      "Alexander Maloney",
+      "Jinzhao Wang",
+      "Yuxiang Yang"
+    ],
+    "year": 2026,
+    "preprintYear": 2026,
+    "topics": [
+      "Quantum"
+    ],
+    "arxiv": "https://arxiv.org/abs/2610.06741",
+    "journal": null,
+    "status": "Preprint",
+    "summary": "Gives free entropy an operational meaning through the quantum memory required to describe many copies of a state with a known spectrum and an unknown eigenbasis.",
+    "links": [
+      {
+        "label": "Code & Lean proofs",
+        "url": "https://github.com/JWang226/Quantum-Minimum-Description-Length"
+      },
+      {
+        "label": "QIQG talk recording",
+        "url": "https://pirsa.org/25060025"
+      }
+    ],
+    "featured": true
+  },
+  {
+    "id": "2610.06742",
+    "title": "Quantum minimum description of density matrices",
+    "authors": [
+      "Patrick Hayden",
+      "Alexander Maloney",
+      "Jinzhao Wang",
+      "Yuxiang Yang"
+    ],
+    "year": 2026,
+    "preprintYear": 2026,
+    "topics": [
+      "Quantum"
+    ],
+    "arxiv": "https://arxiv.org/abs/2610.06742",
+    "journal": null,
+    "status": "Preprint",
+    "summary": "Determines the memory cost of compressing density matrices with a known spectrum, using representation theory and matching achievability and converse bounds.",
+    "links": [
+      {
+        "label": "Code & Lean proofs",
+        "url": "https://github.com/JWang226/Quantum-Minimum-Description-Length"
+      },
+      {
+        "label": "QIQG talk recording",
+        "url": "https://pirsa.org/25060025"
+      }
+    ],
+    "featured": false
+  },
+  {
+    "id": "2609.35986",
+    "title": "Asymptotically Optimal Mixed-State Cloning",
+    "authors": [
+      "Jiani Fei",
+      "Jinzhao Wang"
+    ],
+    "year": 2026,
+    "preprintYear": 2026,
+    "topics": [
+      "Quantum"
+    ],
+    "arxiv": "https://arxiv.org/abs/2609.35986",
+    "journal": null,
+    "status": "Preprint",
+    "summary": "Finds optimal asymptotic fidelities for cloning mixed quantum states, separating the costs of uncertainty in their spectra and eigenbases.",
+    "links": [],
+    "featured": false
+  },
+  {
+    "id": "2609.18222",
+    "title": "Unbounded Holevo additivity gaps in finite dimensions",
+    "authors": [
+      "Jinzhao Wang"
+    ],
+    "year": 2026,
+    "preprintYear": 2026,
+    "topics": [
+      "Quantum"
+    ],
+    "arxiv": "https://arxiv.org/abs/2609.18222",
+    "journal": null,
+    "status": "Preprint",
+    "summary": "Constructs finite-dimensional quantum channels whose two-use Holevo information exceeds twice their single-use value by an arbitrarily large amount.",
+    "links": [
+      {
+        "label": "Code & Lean proofs",
+        "url": "https://github.com/JWang226/Holevo-Additivity-Gap"
+      }
+    ],
+    "featured": false
+  },
+  {
+    "id": "2509.13406",
+    "title": "Free mutual information and higher-point out-of-time-ordered correlators",
+    "alternateTitle": "Free mutual information and higher-point OTOCs",
+    "authors": [
+      "Shreya Vardhan",
+      "Jinzhao Wang"
+    ],
+    "year": 2026,
+    "preprintYear": 2025,
+    "topics": [
+      "Quantum"
+    ],
+    "arxiv": "https://arxiv.org/abs/2509.13406",
+    "journal": {
+      "name": "PRX Quantum",
+      "url": "https://doi.org/10.1103/wt7l-6385"
+    },
+    "status": "Accepted",
+    "summary": "Introduces free mutual information as a measure of quantum chaos and connects it to higher-point OTOCs and the spreading of operators through operator space.",
+    "links": [
+      {
+        "label": "QIP 2026",
+        "url": "https://qipconference.org/2026/sessions/many_body_theory_4/"
+      },
+      {
+        "label": "Contours 2026",
+        "url": "https://indico.global/event/16432/contributions/156308/"
+      },
+      {
+        "label": "Talk · Shreya Vardhan",
+        "url": "https://pirsa.org/25060012"
+      }
+    ],
+    "featured": true
+  },
+  {
+    "id": "2510.07418",
+    "title": "Alpha-bit state merging",
+    "authors": [
+      "Jessica Yeh",
+      "Jinzhao Wang",
+      "Patrick Hayden"
+    ],
+    "year": 2025,
+    "preprintYear": 2025,
+    "topics": [
+      "Quantum",
+      "Gravity"
+    ],
+    "arxiv": "https://arxiv.org/abs/2510.07418",
+    "journal": null,
+    "status": "Preprint",
+    "summary": "Studies state merging with alpha-bits, a communication resource weaker than qubits, and explores implications for entanglement wedge reconstruction.",
+    "links": [],
+    "featured": false
+  },
+  {
+    "id": "2412.19885",
+    "title": "Estimating time in quantum chaotic systems and black holes",
+    "authors": [
+      "Haifeng Tang",
+      "Shreya Vardhan",
+      "Jinzhao Wang"
+    ],
+    "year": 2025,
+    "preprintYear": 2024,
+    "topics": [
+      "Quantum",
+      "Gravity"
+    ],
+    "arxiv": "https://arxiv.org/abs/2412.19885",
+    "journal": {
+      "name": "SciPost Physics 19, 095",
+      "url": "https://doi.org/10.21468/SciPostPhys.19.4.095"
+    },
+    "status": "Published",
+    "summary": "Uses quantum Fisher information to ask how precisely time can be read from a chaotic system, yielding a new formulation of the black hole information paradox.",
+    "links": [],
+    "featured": true
+  },
+  {
+    "id": "2309.07436",
+    "title": "What exactly does Bekenstein bound?",
+    "authors": [
+      "Patrick Hayden",
+      "Jinzhao Wang"
+    ],
+    "year": 2025,
+    "preprintYear": 2023,
+    "topics": [
+      "Quantum",
+      "Gravity"
+    ],
+    "arxiv": "https://arxiv.org/abs/2309.07436",
+    "journal": {
+      "name": "Quantum 9, 1664",
+      "url": "https://doi.org/10.22331/q-2025-03-20-1664"
+    },
+    "status": "Published",
+    "summary": "Tests the information-theoretic meaning of the Bekenstein bound through communication capacities, revealing different constraints on bits, qubits, and zero-bits.",
+    "links": [
+      {
+        "label": "QIP 2024",
+        "url": "https://qip.iaqi.org/2024/site/mypage.aspx%3Fpid=271&lang=en&sid=1522.html"
+      },
+      {
+        "label": "QIP recording",
+        "url": "https://www.youtube.com/watch?v=mxEgJJTgrck"
+      },
+      {
+        "label": "IAS recording",
+        "url": "https://www.ias.edu/video/what-exactly-does-bekenstein-bound"
+      },
+      {
+        "label": "Perimeter recording",
+        "url": "https://pirsa.org/23100090"
+      }
+    ],
+    "featured": false
+  },
+  {
+    "id": "2405.13886",
+    "title": "Quantum Energy Teleportation versus Information Teleportation",
+    "authors": [
+      "Jinzhao Wang",
+      "Shunyu Yao"
+    ],
+    "year": 2024,
+    "preprintYear": 2024,
+    "topics": [
+      "Quantum",
+      "Gravity"
+    ],
+    "arxiv": "https://arxiv.org/abs/2405.13886",
+    "journal": {
+      "name": "Quantum 8, 1564",
+      "url": "https://doi.org/10.22331/q-2024-12-12-1564"
+    },
+    "status": "Published",
+    "summary": "Establishes a trade-off between teleporting energy and quantum information, using both a wormhole-inspired many-body model and a general entanglement bound.",
+    "links": [
+      {
+        "label": "GeoFlow 2025",
+        "url": "https://sites.google.com/view/geoflow/may-2025-meeting"
+      }
+    ],
+    "featured": false
+  },
+  {
+    "id": "2209.10546",
+    "title": "Beyond islands: A free probabilistic approach",
+    "authors": [
+      "Jinzhao Wang"
+    ],
+    "year": 2023,
+    "preprintYear": 2022,
+    "topics": [
+      "Quantum",
+      "Gravity"
+    ],
+    "arxiv": "https://arxiv.org/abs/2209.10546",
+    "journal": {
+      "name": "Journal of High Energy Physics 10 (2023) 040",
+      "url": "https://doi.org/10.1007/JHEP10(2023)040"
+    },
+    "status": "Published",
+    "summary": "Uses free probability to compute black hole radiation entropy beyond the regimes captured by the island formula, connecting gravitational replicas with random matrices.",
+    "links": [
+      {
+        "label": "GGI workshop",
+        "url": "https://www.ggi.infn.it/single-workshop.php?id=367"
+      },
+      {
+        "label": "Talk recording",
+        "url": "https://www.youtube.com/watch?v=hEerpPZ5tcg"
+      }
+    ],
+    "featured": true
+  },
+  {
+    "id": "2105.05892",
+    "title": "The refined quantum extremal surface prescription from the asymptotic equipartition property",
+    "authors": [
+      "Jinzhao Wang"
+    ],
+    "year": 2022,
+    "preprintYear": 2021,
+    "topics": [
+      "Quantum",
+      "Gravity"
+    ],
+    "arxiv": "https://arxiv.org/abs/2105.05892",
+    "journal": {
+      "name": "Quantum 6, 655",
+      "url": "https://doi.org/10.22331/q-2022-02-16-655"
+    },
+    "status": "Published",
+    "summary": "Derives a refined quantum extremal surface prescription using one-shot entropy and the asymptotic equipartition property, with applications to holography and the Page curve.",
+    "links": [
+      {
+        "label": "Strings & Fields 2021",
+        "url": "https://www2.yukawa.kyoto-u.ac.jp/~soken.editorial/sokendenshi/vol37/1/2021/program-soryushiron-kenkyu.html"
+      },
+      {
+        "label": "Slides",
+        "url": "https://www2.yukawa.kyoto-u.ac.jp/~qft.web/2021/slides/wang-jinzhao.pdf"
+      }
+    ],
+    "featured": false
+  },
+  {
+    "id": "2009.14197",
+    "title": "Revisiting the equality conditions of the data processing inequality for the sandwiched Rényi divergence",
+    "authors": [
+      "Jinzhao Wang",
+      "Henrik Wilming"
+    ],
+    "year": 2022,
+    "preprintYear": 2020,
+    "topics": [
+      "Quantum"
+    ],
+    "arxiv": "https://arxiv.org/abs/2009.14197",
+    "journal": {
+      "name": "Journal of Mathematical Physics 63, 052203",
+      "url": "https://doi.org/10.1063/5.0058984"
+    },
+    "status": "Published",
+    "summary": "Provides a unified treatment of equality in the data processing inequality for sandwiched Rényi divergence, including its connection to Petz recovery.",
+    "links": [],
+    "featured": false
+  },
+  {
+    "id": "2110.14653",
+    "title": "The black hole information puzzle and the quantum de Finetti theorem",
+    "authors": [
+      "Renato Renner",
+      "Jinzhao Wang"
+    ],
+    "year": 2021,
+    "preprintYear": 2021,
+    "topics": [
+      "Quantum",
+      "Gravity"
+    ],
+    "arxiv": "https://arxiv.org/abs/2110.14653",
+    "journal": null,
+    "status": "Preprint",
+    "summary": "Interprets replica-trick radiation entropy through the quantum de Finetti theorem, relating replica wormholes to correlations and conditional information.",
+    "links": [
+      {
+        "label": "Perimeter recording",
+        "url": "https://pirsa.org/22030034"
+      },
+      {
+        "label": "Southeast University seminar",
+        "url": "https://yauc.seu.edu.cn/2024/0110/c27831a478671/page.htm"
+      }
+    ],
+    "featured": false
+  },
+  {
+    "id": "2012.06212",
+    "title": "On the horizon entropy of a causal set",
+    "authors": [
+      "Ludovico Machet",
+      "Jinzhao Wang"
+    ],
+    "year": 2021,
+    "preprintYear": 2020,
+    "topics": [
+      "Gravity"
+    ],
+    "arxiv": "https://arxiv.org/abs/2012.06212",
+    "journal": {
+      "name": "Classical and Quantum Gravity 38, 085004",
+      "url": "https://doi.org/10.1088/1361-6382/abe957"
+    },
+    "status": "Published",
+    "summary": "Examines horizon entropy in causal set theory and tests which discrete constructions recover a local horizon area in the continuum limit.",
+    "links": [],
+    "featured": false
+  },
+  {
+    "id": "2007.13192",
+    "title": "On the continuum limit of Benincasa-Dowker-Glaser causal set action",
+    "authors": [
+      "Ludovico Machet",
+      "Jinzhao Wang"
+    ],
+    "year": 2021,
+    "preprintYear": 2020,
+    "topics": [
+      "Gravity"
+    ],
+    "arxiv": "https://arxiv.org/abs/2007.13192",
+    "journal": {
+      "name": "Classical and Quantum Gravity 38, 015010",
+      "url": "https://doi.org/10.1088/1361-6382/abc274"
+    },
+    "status": "Published",
+    "summary": "Computes the continuum limit of a causal set action on curved causal diamonds and identifies the expected gravitational bulk term together with a boundary contribution.",
+    "links": [],
+    "featured": false
+  },
+  {
+    "id": "2007.00030",
+    "title": "Outer entropy equals Bartnik-Bray inner mass and the gravitational ant conjecture",
+    "alternateTitle": "Outer entropy = Bartnik-Bray inner mass, and the gravitational ant conjecture",
+    "authors": [
+      "Jinzhao Wang"
+    ],
+    "year": 2020,
+    "preprintYear": 2020,
+    "topics": [
+      "Gravity"
+    ],
+    "arxiv": "https://arxiv.org/abs/2007.00030",
+    "journal": {
+      "name": "Physical Review D 102, 066009",
+      "url": "https://doi.org/10.1103/PhysRevD.102.066009"
+    },
+    "status": "Published",
+    "summary": "Connects holographic outer entropy with Bartnik-Bray quasilocal mass, translating geometric monotonicity into entropy laws and motivating a gravitational ant conjecture.",
+    "links": [
+      {
+        "label": "Atlantic GR seminar",
+        "url": "https://aarms.math.ca/event/atlantic-gr-seminar-2020-11-25/"
+      }
+    ],
+    "featured": false
+  },
+  {
+    "id": "2001.08485",
+    "title": "The small sphere limit of quasilocal energy in higher dimensions along lightcone cuts",
+    "authors": [
+      "Jinzhao Wang"
+    ],
+    "year": 2020,
+    "preprintYear": 2020,
+    "topics": [
+      "Gravity"
+    ],
+    "arxiv": "https://arxiv.org/abs/2001.08485",
+    "journal": {
+      "name": "Classical and Quantum Gravity 37, 085004",
+      "url": "https://doi.org/10.1088/1361-6382/ab719d"
+    },
+    "status": "Published",
+    "summary": "Generalizes several quasilocal energy definitions to higher dimensions and compares their small-sphere limits, revealing a departure from the four-dimensional Bel-Robinson description.",
+    "links": [],
+    "featured": false
+  },
+  {
+    "id": "1909.11973",
+    "title": "Local gravitational energy in higher dimensions",
+    "authors": [
+      "Jinzhao Wang"
+    ],
+    "year": 2019,
+    "preprintYear": 2019,
+    "topics": [
+      "Gravity"
+    ],
+    "arxiv": "https://arxiv.org/abs/1909.11973",
+    "journal": null,
+    "status": "Preprint",
+    "summary": "Studies the local content of gravitational energy through higher-dimensional quasilocal masses and identifies a common vacuum quantity in their small-sphere limits.",
+    "links": [
+      {
+        "label": "Extended paper",
+        "url": "https://arxiv.org/abs/2001.08485"
+      }
+    ],
+    "featured": false
+  },
+  {
+    "id": "1904.01034",
+    "title": "Geometry of small causal diamonds",
+    "authors": [
+      "Jinzhao Wang"
+    ],
+    "year": 2019,
+    "preprintYear": 2019,
+    "topics": [
+      "Gravity"
+    ],
+    "arxiv": "https://arxiv.org/abs/1904.01034",
+    "journal": {
+      "name": "Physical Review D 100, 064020",
+      "url": "https://doi.org/10.1103/PhysRevD.100.064020"
+    },
+    "status": "Published",
+    "summary": "Computes geometric properties of three constructions of small causal diamonds, providing curvature expansions useful in general relativity and quantum gravity.",
+    "links": [],
+    "featured": false
+  },
+  {
+    "id": "1808.09988",
+    "title": "Confidence Polytopes in Quantum State Tomography",
+    "authors": [
+      "Jinzhao Wang",
+      "Volkher B. Scholz",
+      "Renato Renner"
+    ],
+    "year": 2019,
+    "preprintYear": 2018,
+    "topics": [
+      "Quantum"
+    ],
+    "arxiv": "https://arxiv.org/abs/1808.09988",
+    "journal": {
+      "name": "Physical Review Letters 122, 190401",
+      "url": "https://doi.org/10.1103/PhysRevLett.122.190401"
+    },
+    "status": "Published",
+    "summary": "Develops efficiently computable confidence regions for quantum state tomography, giving reconstructed states rigorous statistical error bars.",
+    "links": [],
+    "featured": false
+  },
+  {
+    "id": "1602.08742",
+    "title": "Optimizing the Learning Order of Chinese Characters Using a Novel Topological Sort Algorithm",
+    "authors": [
+      "James C. Loach",
+      "Jinzhao Wang"
+    ],
+    "year": 2016,
+    "preprintYear": 2016,
+    "topics": [],
+    "area": "Algorithms & language",
+    "arxiv": "https://arxiv.org/abs/1602.08742",
+    "journal": {
+      "name": "PLOS ONE 11(10), e0163623",
+      "url": "https://doi.org/10.1371/journal.pone.0163623"
+    },
+    "status": "Published",
+    "summary": "Designs a learning order that balances character frequency with structural prerequisites, using a topological sorting algorithm applicable to broader scheduling tasks.",
+    "links": [],
+    "featured": false
+  }
+]
