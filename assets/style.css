@@ -180,6 +180,16 @@
   .home-paper .paper-year{padding-top:20px}
   .home-paper .paper{padding-top:10px}
 }
+/* Match inner pages to the homepage name and recent-publication type scale. */
+@media screen{
+.content-page{--page-title:clamp(42px,3.9vw,52px);--section-title:clamp(30px,3vw,36px);--entry-title:clamp(26px,2.5vw,30px)}
+.content-page .research-detail h2,.content-page .cv-section>h2{font-size:var(--section-title)}
+.content-page .article-heading h1,.content-page .cv-top h1{font-size:var(--page-title)}
+.content-page .year-group>h2{font-size:var(--entry-title)}
+.content-page .page-heading h1{letter-spacing:-.025em}
+}
+@media screen and (max-width:1050px){.content-page{--page-title:48px}}
+@media screen and (max-width:520px){.content-page{--page-title:42px}}
 /* Wider serif headings need their own row above the phone illustrations. */
 @media(max-width:760px){.research-detail .research-visual{position:static;width:200px;height:140px;margin:18px 0 0}}
 @media(prefers-reduced-motion:reduce){:root{scroll-behavior:auto}*,*:before,*:after{transition:none!important;animation:none!important}}
