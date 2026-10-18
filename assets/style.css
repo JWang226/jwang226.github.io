@@ -21,7 +21,11 @@
 .gravity-meridians{stroke:#a2a78f;stroke-width:.7;opacity:.8}
 .gravity-contours{stroke:#89937b;stroke-width:.85}
 .gravity-silhouette{stroke:#6f7b67;stroke-width:1}
-.gravity-infall{stroke:var(--accent);stroke-width:1.8;stroke-dasharray:.07 .93;stroke-dashoffset:1;opacity:0;pointer-events:none}
+.hawking-particle{fill:none;stroke-width:6;stroke-linecap:round;stroke-dasharray:.002 .998;stroke-dashoffset:1;opacity:0;pointer-events:none}
+.hawking-in{stroke:#356fa8}
+.hawking-out{stroke:#b64b3e}
+.hawking-halo{stroke-width:12;--particle-opacity:.14}
+.hawking-birth{fill:none;stroke:#9d8f75;stroke-width:1;opacity:0;pointer-events:none}
 .gravity-throat-halo{stroke:var(--accent);stroke-width:6;opacity:.12}
 .gravity-throat{stroke:var(--accent);stroke-width:2.3}
 @media(max-width:760px){#gravity .research-visual{top:16px}}
@@ -77,17 +81,20 @@
   .research-visual.is-animating .network-signal:nth-child(2){animation-delay:.6s}
   .research-visual.is-animating .network-signal:nth-child(3){animation-delay:1.2s}
   .research-visual.is-animating .network-node{animation:network-node-pulse 2s ease-in-out infinite;animation-delay:var(--node-delay)}
-  .research-visual.is-animating .gravity-infall{animation:gravity-infall 4.6s linear infinite;animation-delay:var(--infall-delay,0s)}
+  .research-visual.is-animating .hawking-particle{animation:hawking-travel 6s linear infinite;animation-delay:var(--pair-delay,0s)}
+  .research-visual.is-animating .hawking-birth{animation:hawking-birth 6s ease-out infinite;animation-delay:var(--pair-delay,0s)}
   @keyframes network-flow{0%{stroke-dashoffset:1;opacity:0}12%,85%{opacity:.85}100%{stroke-dashoffset:0;opacity:0}}
   @keyframes network-node-pulse{50%{transform:scale(1.35);stroke:#8b342b}}
-  @keyframes gravity-infall{0%{stroke-dashoffset:1;opacity:0}12%,82%{opacity:.85}100%{stroke-dashoffset:0;opacity:0}}
+  @keyframes hawking-travel{0%{stroke-dashoffset:1;opacity:0}8%,80%{opacity:var(--particle-opacity,1)}100%{stroke-dashoffset:0;opacity:0}}
+  @keyframes hawking-birth{0%,20%,100%{opacity:0}5%{opacity:.5}}
 }
 @media(prefers-reduced-motion:no-preference) and (hover:hover) and (pointer:fine){
   :is(.research-card:is(:hover,:has(.research-card-link:focus-visible)), .research-detail .research-visual:hover) .network-signal{animation:network-flow 2s linear infinite}
   :is(.research-card:is(:hover,:has(.research-card-link:focus-visible)), .research-detail .research-visual:hover) .network-signal:nth-child(2){animation-delay:.6s}
   :is(.research-card:is(:hover,:has(.research-card-link:focus-visible)), .research-detail .research-visual:hover) .network-signal:nth-child(3){animation-delay:1.2s}
   :is(.research-card:is(:hover,:has(.research-card-link:focus-visible)), .research-detail .research-visual:hover) .network-node{animation:network-node-pulse 2s ease-in-out infinite;animation-delay:var(--node-delay)}
-  :is(.research-card:is(:hover,:has(.research-card-link:focus-visible)), .research-detail .research-visual:hover) .gravity-infall{animation:gravity-infall 4.6s linear infinite;animation-delay:var(--infall-delay,0s)}
+  :is(.research-card:is(:hover,:has(.research-card-link:focus-visible)), .research-detail .research-visual:hover) .hawking-particle{animation:hawking-travel 6s linear infinite;animation-delay:var(--pair-delay,0s)}
+  :is(.research-card:is(:hover,:has(.research-card-link:focus-visible)), .research-detail .research-visual:hover) .hawking-birth{animation:hawking-birth 6s ease-out infinite;animation-delay:var(--pair-delay,0s)}
 }
 .research-writing{border-top:1px solid var(--rule);padding-top:20px}
 .research-writing-meta{font-size:var(--entry-meta);color:var(--muted);line-height:1.7}

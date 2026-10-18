@@ -57,9 +57,16 @@ function visual(topic, large = false) {
     const ring = along => trace(Array.from({length:65},(_,i)=>project(along,i*Math.PI/32)))+'Z';
     const rings = [.12,.28,.45,.62,.78,.9,1.28,1.55,1.8,2,2.23,2.46,2.68,2.86,2.95].map(along=>`<path d="${ring(along)}"/>`).join('');
     const meridians = Array.from({length:24},(_,i)=>`<path d="${meridian(i*Math.PI/12)}"/>`).join('');
-    const signals = [.2,.5,.8].map((turn,i)=>`<path class="gravity-infall" pathLength="1" d="${meridian(turn*Math.PI,2.35)}" style="--infall-delay:-${i*1.5}s"/>`).join('');
+    const pairs = [.22,.5,.78].map((turn,i) => {
+      const angle = turn*Math.PI;
+      const [x,y] = project(1,angle);
+      const inward = trace(Array.from({length:49},(_,j)=>project(1+1.2*j/48,angle)));
+      const outward = trace(Array.from({length:49},(_,j)=>project(1-j/48,angle)));
+      const particle = (direction,path) => `<path class="hawking-particle hawking-halo hawking-${direction}" pathLength="1" d="${path}"/><path class="hawking-particle hawking-${direction}" pathLength="1" d="${path}"/>`;
+      return `<g class="hawking-pair" style="--pair-delay:-${i*2}s"><circle class="hawking-birth" cx="${x.toFixed(2)}" cy="${y.toFixed(2)}" r="5"/>${particle('in',inward)}${particle('out',outward)}</g>`;
+    }).join('');
     const edge = [Math.atan(.22),Math.atan(.22)+Math.PI].map(angle=>`<path d="${meridian(angle,3)}"/>`).join('');
-    art = `<path class="gravity-sheet" d="M13 15.16H229L277 64.84H61Z"/><g class="gravity-meridians">${meridians}</g><g class="gravity-contours">${rings}</g><g class="gravity-silhouette">${edge}</g><g>${signals}</g><path class="gravity-throat-halo" d="${ring(1)}"/><path class="gravity-throat" d="${ring(1)}"/>`;
+    art = `<path class="gravity-sheet" d="M13 15.16H229L277 64.84H61Z"/><g class="gravity-meridians">${meridians}</g><g class="gravity-contours">${rings}</g><g class="gravity-silhouette">${edge}</g><path class="gravity-throat-halo" d="${ring(1)}"/><path class="gravity-throat" d="${ring(1)}"/>${pairs}`;
   }
   return `<button type="button" class="research-visual animation-toggle ${large?'large':''}" aria-label="Animate ${esc(topic)} illustration" aria-pressed="false"><svg class="research-art" viewBox="0 0 290 205" aria-hidden="true" fill="none" stroke="#777d70" stroke-width=".85"><g>${art}</g></svg></button>`;
 }
