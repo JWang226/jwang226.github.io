@@ -37,5 +37,20 @@ const home=htmlByFile.get(path.join(root,'index.html'));
 for(const id of ['ai-llm','quantum','gravity']) assert(home.includes('/research/#'+id),`Home must showcase ${id}`);
 const cv=htmlByFile.get(path.join(root,'cv/index.html'));
 assert(!/tel:|mailto:|Take-Home|residency interview|References</i.test(cv),'Private CV details must not be published');
+const presentations=JSON.parse(await readFile('data/presentations.json','utf8'));
+const talks=JSON.parse(await readFile('data/talks.json','utf8'));
+const talkUrls=new Set(talks.map(t=>t.url));
+assert(new Set(presentations.map(p=>p.id)).size===presentations.length,'Presentation IDs must be unique');
+assert([...cv.matchAll(/class="cv-talk-entry"/g)].length===presentations.length,'The full presentation list must appear on the CV');
+for(const p of presentations) {
+  assert(p.event && p.kind && Number.isInteger(p.year) && Number.isInteger(p.month) && p.month>=1 && p.month<=12,`Invalid presentation: ${p.id}`);
+  if(p.talkUrl) assert(talkUrls.has(p.talkUrl),`Missing verified talk resource: ${p.id}`);
+  if(p.presenter) assert(cv.includes(`Presented by ${p.presenter}`),`Missing presenter credit: ${p.id}`);
+}
+for(const t of talks) for(const id of t.arxivIds || []) {
+  const p=papers.find(p=>p.id===id);
+  assert(p,`Talk references an unknown paper: ${id}`);
+  if(t.type==='Recording') assert(p.links.some(l=>l.url===t.url),`Recording missing from relevant paper: ${id}`);
+}
 if(errors.length) {console.error(errors.join('\n'));process.exit(1);}
-console.log(`Verified ${htmlFiles.length} HTML pages, all local links and anchors, ${papers.length} publication records, and required homepage sections.`);
+console.log(`Verified ${htmlFiles.length} HTML pages, all local links and anchors, ${papers.length} publication records, ${presentations.length} CV presentations, and recording-to-paper links.`);

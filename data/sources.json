@@ -28,7 +28,8 @@
       "sources": [
         "https://arxiv.org/abs/2610.06741",
         "https://github.com/JWang226/Quantum-Minimum-Description-Length",
-        "https://pirsa.org/25060025"
+        "https://pirsa.org/25060025",
+        "https://www1.fields.utoronto.ca/talks/Free-entropy-and-quantum-minimum-description-length"
       ]
     },
     {
@@ -58,7 +59,8 @@
         "https://doi.org/10.1103/wt7l-6385",
         "https://qipconference.org/2026/sessions/many_body_theory_4/",
         "https://indico.global/event/16432/contributions/156308/",
-        "https://pirsa.org/25060012"
+        "https://pirsa.org/25060012",
+        "https://www.caltech.edu/campus-life-events/calendar/high-energy-theory-seminar-810"
       ]
     },
     {
@@ -82,7 +84,9 @@
         "https://qip.iaqi.org/2024/site/mypage.aspx%3Fpid=271&lang=en&sid=1522.html",
         "https://www.youtube.com/watch?v=mxEgJJTgrck",
         "https://www.ias.edu/video/what-exactly-does-bekenstein-bound",
-        "https://pirsa.org/23100090"
+        "https://pirsa.org/23100090",
+        "https://vimeo.com/884661886",
+        "https://www.oist.jp/research/research-units/quast/recorded-group-seminars"
       ]
     },
     {
@@ -123,7 +127,11 @@
       "sources": [
         "https://arxiv.org/abs/2110.14653",
         "https://pirsa.org/22030034",
-        "https://yauc.seu.edu.cn/2024/0110/c27831a478671/page.htm"
+        "https://yauc.seu.edu.cn/2024/0110/c27831a478671/page.htm",
+        "https://vimeo.com/686587406",
+        "https://www.oist.jp/research/research-units/quast/recorded-group-seminars",
+        "https://indico.global/event/408/",
+        "https://indico.global/event/408/attachments/612/1150/Loops%2722%20Jinzhao.pdf"
       ]
     },
     {
@@ -145,7 +153,10 @@
       "sources": [
         "https://arxiv.org/abs/2007.00030",
         "https://doi.org/10.1103/PhysRevD.102.066009",
-        "https://aarms.math.ca/event/atlantic-gr-seminar-2020-11-25/"
+        "https://aarms.math.ca/event/atlantic-gr-seminar-2020-11-25/",
+        "https://projects.ift.uam-csic.es/holotube/11703-2/",
+        "https://projects.ift.uam-csic.es/holotube/600-2/",
+        "https://projects.ift.uam-csic.es/holotube/wp-content/uploads/2020/10/Holotube_Jinzhao_Wang-2.pdf"
       ]
     },
     {
@@ -204,6 +215,21 @@
     {
       "url": "https://journals.plos.org/plosone/article?id=10.1371/journal.pone.0163623",
       "supports": "Chinese-character publication title, authors, date and journal details"
+    },
+    {
+      "url": "https://sites.google.com/view/geoflow/mar-2023-meeting",
+      "supports": "GeoFlow March 2023 date, title, speaker and public recording link; no paper mapping claimed"
     }
-  ]
+  ],
+  "cvPresentations": {
+    "source": "Owner-provided updated CV text, received 2026-10-17",
+    "entries": 62,
+    "notes": [
+      "The full 2018–2025 list includes invited and contributed talks, seminars, oral presentations and posters.",
+      "The Virtual Causet Conference 2020 entry explicitly credits Ludovico Machet as the presenter.",
+      "The GGI talk is listed in July 2022, correcting the June date in the CV using the official programme: 1 July 2022, 11:30–12:30.",
+      "The GeoFlow March 2023 recording is linked on the CV, without assigning it to a paper because its publication mapping could not be confirmed.",
+      "Research, supervision and teaching sections remain omitted at the owner’s earlier request. Private contact information and referee details are not published."
+    ]
+  }
 }

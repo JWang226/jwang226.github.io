@@ -19,7 +19,8 @@ Open [localhost:4173](http://localhost:4173). Rebuild after editing source files
 
 - `data/site.json`: name, affiliation, social links, site URL, and search description.
 - `data/publications.json`: publication metadata and verified links. Follow the structure of an existing entry; keep stable arXiv IDs in `id`, author names in `authors`, topic names in `topics`, the original arXiv year in `preprintYear`, and the publication or acceptance year in `year`. A journal uses `{ "name": "...", "url": "..." }`; use `null` for an unpublished preprint. Conference, recording, slides, and code links belong in the `links` array as `{ "label": "...", "url": "..." }`. `featured` selects highlighted papers. Research pages use the `Quantum` and `Gravity` topic classifications; add `AI/LLM` only for relevant work.
-- `data/talks.json`: selected talks and recordings, linked to publications by `arxivIds`.
+- `data/presentations.json`: the full CV presentation list, grouped by year and month. A `talkUrl` matches a verified resource in `data/talks.json`; `presenter` explicitly credits a presentation delivered by someone else.
+- `data/talks.json`: verified talk resources and recordings, linked to publications by `arxivIds`. Add each recording to the relevant paper’s `links` array as well.
 - `data/sources.json`: the source audit and corrections to older CV metadata. Record primary sources here when adding or updating publications. Use full HTTPS URLs and omit links that have not been verified.
 - `data/external-posts.json`: writing published elsewhere, with its original title, date, and source link.
 - `scripts/build.mjs`: page copy, research descriptions, and the online CV.

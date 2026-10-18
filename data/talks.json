@@ -5,9 +5,25 @@
     "venue": "QIP 2026",
     "url": "https://qipconference.org/2026/sessions/many_body_theory_4/",
     "type": "Conference",
-    "authors": ["Shreya Vardhan", "Jinzhao Wang"],
-    "arxivIds": ["2509.13406"],
+    "authors": [
+      "Shreya Vardhan",
+      "Jinzhao Wang"
+    ],
+    "arxivIds": [
+      "2509.13406"
+    ],
     "paperTitle": "Free mutual information and higher-point OTOCs"
+  },
+  {
+    "title": "Free mutual information and higher-point OTOCs",
+    "date": "2025-11-05",
+    "venue": "High Energy Theory Seminar, Caltech",
+    "url": "https://www.caltech.edu/campus-life-events/calendar/high-energy-theory-seminar-810",
+    "type": "Seminar",
+    "speaker": "Jinzhao Wang",
+    "arxivIds": [
+      "2509.13406"
+    ]
   },
   {
     "title": "Towards an information theory of scrambling",
@@ -16,7 +32,10 @@
     "url": "https://pirsa.org/25060025",
     "type": "Recording",
     "speaker": "Jinzhao Wang",
-    "arxivIds": ["2610.06741", "2610.06742"],
+    "arxivIds": [
+      "2610.06741",
+      "2610.06742"
+    ],
     "paperTitle": "Free entropy and quantum minimum description length",
     "mappingNote": "The talk describes preliminary work on free entropy and quantum minimum description length, subsequently developed in these two papers."
   },
@@ -27,8 +46,22 @@
     "url": "https://pirsa.org/25060012",
     "type": "Recording",
     "speaker": "Shreya Vardhan",
-    "arxivIds": ["2509.13406"],
+    "arxivIds": [
+      "2509.13406"
+    ],
     "paperTitle": "Free mutual information and higher-point OTOCs"
+  },
+  {
+    "title": "Free entropy and quantum minimum description length",
+    "date": "2025-06-04",
+    "venue": "Operator Algebras and Quantum Information, Waterloo",
+    "url": "https://www1.fields.utoronto.ca/talks/Free-entropy-and-quantum-minimum-description-length",
+    "type": "Conference",
+    "speaker": "Jinzhao Wang",
+    "arxivIds": [
+      "2610.06741"
+    ],
+    "mappingNote": "This 2025 presentation has the same title as the subsequently published 2026 preprint."
   },
   {
     "title": "Quantum Energy Teleportation versus Quantum Information Teleportation",
@@ -37,7 +70,9 @@
     "url": "https://sites.google.com/view/geoflow/may-2025-meeting",
     "type": "Conference",
     "speaker": "Jinzhao Wang",
-    "arxivIds": ["2405.13886"],
+    "arxivIds": [
+      "2405.13886"
+    ],
     "paperTitle": "Quantum Energy Teleportation versus Information Teleportation"
   },
   {
@@ -48,7 +83,9 @@
     "sourceUrl": "https://qip.iaqi.org/2024/site/mypage.aspx%3Fpid=271&lang=en&sid=1522.html",
     "type": "Recording",
     "speaker": "Jinzhao Wang",
-    "arxivIds": ["2309.07436"],
+    "arxivIds": [
+      "2309.07436"
+    ],
     "paperTitle": "What exactly does Bekenstein bound?"
   },
   {
@@ -58,7 +95,9 @@
     "url": "https://yauc.seu.edu.cn/2024/0110/c27831a478671/page.htm",
     "type": "Seminar",
     "speaker": "Jinzhao Wang",
-    "arxivIds": ["2110.14653"],
+    "arxivIds": [
+      "2110.14653"
+    ],
     "paperTitle": "The black hole information puzzle and the quantum de Finetti theorem"
   },
   {
@@ -68,8 +107,22 @@
     "url": "https://www.ias.edu/video/what-exactly-does-bekenstein-bound",
     "type": "Recording",
     "speaker": "Jinzhao Wang",
-    "arxivIds": ["2309.07436"],
+    "arxivIds": [
+      "2309.07436"
+    ],
     "paperTitle": "What exactly does Bekenstein bound?"
+  },
+  {
+    "title": "What exactly does Bekenstein bound?",
+    "date": "2023-10-17",
+    "venue": "Qubits and Spacetime Group Seminar, Okinawa Institute of Science and Technology",
+    "url": "https://vimeo.com/884661886",
+    "sourceUrl": "https://www.oist.jp/research/research-units/quast/recorded-group-seminars",
+    "type": "Recording",
+    "speaker": "Jinzhao Wang",
+    "arxivIds": [
+      "2309.07436"
+    ]
   },
   {
     "title": "What exactly does Bekenstein Bound?",
@@ -78,8 +131,33 @@
     "url": "https://pirsa.org/23100090",
     "type": "Recording",
     "speaker": "Jinzhao Wang",
-    "arxivIds": ["2309.07436"],
+    "arxivIds": [
+      "2309.07436"
+    ],
     "paperTitle": "What exactly does Bekenstein bound?"
+  },
+  {
+    "title": "On some information-theoretic questions in double-scaled SYK and JT gravity",
+    "date": "2023-03-13",
+    "venue": "GeoFlow Meeting, University of California, Berkeley",
+    "url": "https://drive.google.com/file/d/1UHApgLEnBmiXGg9xJSTG2DyzX8F1EagJ/view?usp=sharing",
+    "sourceUrl": "https://sites.google.com/view/geoflow/mar-2023-meeting",
+    "type": "Recording",
+    "speaker": "Jinzhao Wang",
+    "arxivIds": [],
+    "mappingNote": "The official programme verifies this talk and recording, but no specific publication mapping has been established."
+  },
+  {
+    "title": "Demystifying the replica trick calculation of the entropy of Hawking radiation",
+    "date": "2022-07-18",
+    "venue": "Loops 2022, Lyon",
+    "url": "https://indico.global/event/408/",
+    "slidesUrl": "https://indico.global/event/408/attachments/612/1150/Loops%2722%20Jinzhao.pdf",
+    "type": "Conference",
+    "speaker": "Jinzhao Wang",
+    "arxivIds": [
+      "2110.14653"
+    ]
   },
   {
     "title": "Beyond islands: a free probabilistic approach",
@@ -89,7 +167,9 @@
     "sourceUrl": "https://www.ggi.infn.it/single-workshop.php?id=367",
     "type": "Recording",
     "speaker": "Jinzhao Wang",
-    "arxivIds": ["2209.10546"],
+    "arxivIds": [
+      "2209.10546"
+    ],
     "paperTitle": "Beyond islands: A free probabilistic approach"
   },
   {
@@ -99,8 +179,22 @@
     "url": "https://pirsa.org/22030034",
     "type": "Recording",
     "speaker": "Jinzhao Wang",
-    "arxivIds": ["2110.14653"],
+    "arxivIds": [
+      "2110.14653"
+    ],
     "paperTitle": "The black hole information puzzle and the quantum de Finetti theorem"
+  },
+  {
+    "title": "The black hole information puzzle and the quantum de Finetti theorem",
+    "date": "2022-03-07",
+    "venue": "Spacetime and Qubits Group Seminar, Okinawa Institute of Science and Technology",
+    "url": "https://vimeo.com/686587406",
+    "sourceUrl": "https://www.oist.jp/research/research-units/quast/recorded-group-seminars",
+    "type": "Recording",
+    "speaker": "Jinzhao Wang",
+    "arxivIds": [
+      "2110.14653"
+    ]
   },
   {
     "title": "The refined quantum extremal surface prescription from the asymptotic equipartition property",
@@ -110,7 +204,9 @@
     "slidesUrl": "https://www2.yukawa.kyoto-u.ac.jp/~qft.web/2021/slides/wang-jinzhao.pdf",
     "type": "Conference",
     "speaker": "Jinzhao Wang",
-    "arxivIds": ["2105.05892"],
+    "arxivIds": [
+      "2105.05892"
+    ],
     "paperTitle": "The refined quantum extremal surface prescription from the asymptotic equipartition property"
   },
   {
@@ -120,7 +216,22 @@
     "url": "https://aarms.math.ca/event/atlantic-gr-seminar-2020-11-25/",
     "type": "Seminar",
     "speaker": "Jinzhao Wang",
-    "arxivIds": ["2007.00030"],
+    "arxivIds": [
+      "2007.00030"
+    ],
     "paperTitle": "Outer entropy = Bartnik-Bray inner mass, and the gravitational ant conjecture"
+  },
+  {
+    "title": "Outer entropy equals Bartnik-Bray inner mass, and the gravitational ant conjecture",
+    "date": "2020-10-28",
+    "venue": "Holotube Junior Seminar",
+    "url": "https://projects.ift.uam-csic.es/holotube/11703-2/",
+    "sourceUrl": "https://projects.ift.uam-csic.es/holotube/600-2/",
+    "slidesUrl": "https://projects.ift.uam-csic.es/holotube/wp-content/uploads/2020/10/Holotube_Jinzhao_Wang-2.pdf",
+    "type": "Seminar",
+    "speaker": "Jinzhao Wang",
+    "arxivIds": [
+      "2007.00030"
+    ]
   }
 ]

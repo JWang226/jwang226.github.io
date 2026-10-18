@@ -1,0 +1,516 @@
+[
+  {
+    "id": "2025-01",
+    "year": 2025,
+    "month": 11,
+    "event": "High Energy Theory Seminar",
+    "venue": "Caltech",
+    "kind": "Invited talk",
+    "talkUrl": "https://www.caltech.edu/campus-life-events/calendar/high-energy-theory-seminar-810"
+  },
+  {
+    "id": "2025-perimeter",
+    "year": 2025,
+    "month": 6,
+    "event": "Quantum Information in Quantum Gravity 2025",
+    "venue": "Perimeter Institute",
+    "kind": "Invited talk",
+    "talkUrl": "https://pirsa.org/25060025"
+  },
+  {
+    "id": "2025-03",
+    "year": 2025,
+    "month": 6,
+    "event": "Operator Algebras and Quantum Information",
+    "venue": "Waterloo",
+    "kind": "Contributed talk",
+    "talkUrl": "https://www1.fields.utoronto.ca/talks/Free-entropy-and-quantum-minimum-description-length"
+  },
+  {
+    "id": "2025-geoflow",
+    "year": 2025,
+    "month": 5,
+    "event": "GeoFlow Meeting 2025",
+    "venue": "University of California, Berkeley",
+    "kind": "Invited talk",
+    "talkUrl": "https://sites.google.com/view/geoflow/may-2025-meeting"
+  },
+  {
+    "id": "2025-05",
+    "year": 2025,
+    "month": 4,
+    "event": "Mathematics Colloquium",
+    "venue": "University of Calgary",
+    "kind": "Invited talk"
+  },
+  {
+    "id": "2025-06",
+    "year": 2025,
+    "month": 3,
+    "event": "EECS Colloquium",
+    "venue": "Syracuse University",
+    "kind": "Invited talk"
+  },
+  {
+    "id": "2025-07",
+    "year": 2025,
+    "month": 2,
+    "event": "Physics Colloquium",
+    "venue": "University of Miami",
+    "kind": "Invited talk"
+  },
+  {
+    "id": "2024-08",
+    "year": 2024,
+    "month": 12,
+    "event": "Holographic Duality and Models of Quantum Computation",
+    "venue": "Bali",
+    "kind": "Invited talk"
+  },
+  {
+    "id": "2024-09",
+    "year": 2024,
+    "month": 10,
+    "event": "High Energy Seminar",
+    "venue": "Purdue University",
+    "kind": "Invited talk"
+  },
+  {
+    "id": "2024-10",
+    "year": 2024,
+    "month": 7,
+    "event": "Quantum Frontier",
+    "venue": "Institute for Advanced Study, Tsinghua University",
+    "kind": "Invited talk"
+  },
+  {
+    "id": "2024-11",
+    "year": 2024,
+    "month": 7,
+    "event": "Holography in Beijing 2024",
+    "venue": "Kavli Institute for Theoretical Sciences, UCAS",
+    "kind": "Invited talk"
+  },
+  {
+    "id": "2024-qip",
+    "year": 2024,
+    "month": 1,
+    "event": "Quantum Information Processing (QIP) 2024",
+    "venue": "Taipei, Taiwan",
+    "kind": "Contributed talk",
+    "talkUrl": "https://www.youtube.com/watch?v=mxEgJJTgrck"
+  },
+  {
+    "id": "2024-yau",
+    "year": 2024,
+    "month": 1,
+    "event": "High Energy Theory Seminar",
+    "venue": "Shing-Tung Yau Center, Southeast University",
+    "kind": "Invited talk",
+    "talkUrl": "https://yauc.seu.edu.cn/2024/0110/c27831a478671/page.htm"
+  },
+  {
+    "id": "2023-14",
+    "year": 2023,
+    "month": 12,
+    "event": "Tsinghua Sanya International Mathematics Forum (TSIMF)",
+    "venue": "Sanya",
+    "kind": "Invited talk"
+  },
+  {
+    "id": "2023-ias",
+    "year": 2023,
+    "month": 12,
+    "event": "IAS Qubit Meeting 2023",
+    "venue": "Institute for Advanced Study, Princeton",
+    "kind": "Invited talk",
+    "talkUrl": "https://www.ias.edu/video/what-exactly-does-bekenstein-bound"
+  },
+  {
+    "id": "2023-16",
+    "year": 2023,
+    "month": 11,
+    "event": "SITP Seminar",
+    "venue": "Stanford University",
+    "kind": "Talk"
+  },
+  {
+    "id": "2023-17",
+    "year": 2023,
+    "month": 10,
+    "event": "Qubits and Spacetime Group Seminar",
+    "venue": "Okinawa Institute of Science and Technology",
+    "kind": "Invited talk",
+    "talkUrl": "https://vimeo.com/884661886"
+  },
+  {
+    "id": "2023-18",
+    "year": 2023,
+    "month": 10,
+    "event": "String Theory Seminar",
+    "venue": "Massachusetts Institute of Technology",
+    "kind": "Invited talk"
+  },
+  {
+    "id": "2023-perimeter",
+    "year": 2023,
+    "month": 10,
+    "event": "Quantum Information Seminar",
+    "venue": "Perimeter Institute",
+    "kind": "Invited talk",
+    "talkUrl": "https://pirsa.org/23100090"
+  },
+  {
+    "id": "2023-20",
+    "year": 2023,
+    "month": 7,
+    "event": "Relativistic Quantum Information–North",
+    "venue": "Crete",
+    "kind": "Contributed talk"
+  },
+  {
+    "id": "2023-21",
+    "year": 2023,
+    "month": 7,
+    "event": "Quantum Information Seminar",
+    "venue": "Centre for Quantum Technologies, Singapore",
+    "kind": "Invited talk"
+  },
+  {
+    "id": "2023-22",
+    "year": 2023,
+    "month": 6,
+    "event": "Frontiers of Quantum Gravity",
+    "venue": "Institute for Advanced Study, Tsinghua University",
+    "kind": "Invited talk"
+  },
+  {
+    "id": "2023-23",
+    "year": 2023,
+    "month": 5,
+    "event": "Tensors Online Seminar",
+    "venue": "Lyon",
+    "kind": "Invited talk"
+  },
+  {
+    "id": "2023-24",
+    "year": 2023,
+    "month": 3,
+    "event": "GeoFlow Meeting 2023",
+    "venue": "University of California, Berkeley",
+    "kind": "Invited talk",
+    "talkUrl": "https://drive.google.com/file/d/1UHApgLEnBmiXGg9xJSTG2DyzX8F1EagJ/view?usp=sharing"
+  },
+  {
+    "id": "2023-25",
+    "year": 2023,
+    "month": 2,
+    "event": "DSSYK “Chord” Party",
+    "venue": "Stanford University",
+    "kind": "Invited talk"
+  },
+  {
+    "id": "2023-26",
+    "year": 2023,
+    "month": 1,
+    "event": "Functional Analysis Seminar",
+    "venue": "Saarland University",
+    "kind": "Invited talk"
+  },
+  {
+    "id": "2023-27",
+    "year": 2023,
+    "month": 1,
+    "event": "Abu Dhabi Meeting on Theoretical Physics",
+    "venue": "New York University Abu Dhabi",
+    "kind": "Invited talk"
+  },
+  {
+    "id": "2022-28",
+    "year": 2022,
+    "month": 10,
+    "event": "It from Qubit Seminar",
+    "venue": "Stanford University",
+    "kind": "Seminar"
+  },
+  {
+    "id": "2022-29",
+    "year": 2022,
+    "month": 10,
+    "event": "Quantum Information and Quantum Computing Seminar",
+    "venue": "Stanford University",
+    "kind": "Seminar"
+  },
+  {
+    "id": "2022-30",
+    "year": 2022,
+    "month": 9,
+    "event": "HEP / Quantum Information Seminar",
+    "venue": "University of California, Berkeley",
+    "kind": "Seminar"
+  },
+  {
+    "id": "2022-31",
+    "year": 2022,
+    "month": 7,
+    "event": "Loops 2022",
+    "venue": "Lyon",
+    "kind": "Contributed talk",
+    "talkUrl": "https://indico.global/event/408/"
+  },
+  {
+    "id": "2022-32",
+    "year": 2022,
+    "month": 7,
+    "event": "Global Structure in Semi-Classical Gravity",
+    "venue": "Munich",
+    "kind": "Contributed talk"
+  },
+  {
+    "id": "2022-ggi",
+    "year": 2022,
+    "month": 7,
+    "event": "Reconstructing the Gravitational Hologram with Quantum Information",
+    "venue": "Galileo Galilei Institute, Florence",
+    "kind": "Invited talk",
+    "talkUrl": "https://www.youtube.com/watch?v=hEerpPZ5tcg"
+  },
+  {
+    "id": "2022-34",
+    "year": 2022,
+    "month": 5,
+    "event": "Causal Fermion Systems Seminar",
+    "venue": "University of Regensburg",
+    "kind": "Invited talk"
+  },
+  {
+    "id": "2022-35",
+    "year": 2022,
+    "month": 4,
+    "event": "Quantum Information Seminar",
+    "venue": "ICFO, Barcelona",
+    "kind": "Invited talk"
+  },
+  {
+    "id": "2022-36",
+    "year": 2022,
+    "month": 3,
+    "event": "Spacetime and Qubits Group Seminar",
+    "venue": "Okinawa Institute of Science and Technology",
+    "kind": "Invited talk",
+    "talkUrl": "https://vimeo.com/686587406"
+  },
+  {
+    "id": "2022-perimeter",
+    "year": 2022,
+    "month": 3,
+    "event": "Quantum Information Seminar",
+    "venue": "Perimeter Institute",
+    "kind": "Invited talk",
+    "talkUrl": "https://pirsa.org/22030034"
+  },
+  {
+    "id": "2021-38",
+    "year": 2021,
+    "month": 10,
+    "event": "Centre for Quantum Technologies Seminar",
+    "venue": "National University of Singapore",
+    "kind": "Invited talk"
+  },
+  {
+    "id": "2021-yitp",
+    "year": 2021,
+    "month": 8,
+    "event": "Strings and Fields 2021",
+    "venue": "Yukawa Institute for Theoretical Physics, Kyoto",
+    "kind": "Oral presentation",
+    "talkUrl": "https://www2.yukawa.kyoto-u.ac.jp/~soken.editorial/sokendenshi/vol37/1/2021/program-soryushiron-kenkyu.html"
+  },
+  {
+    "id": "2021-40",
+    "year": 2021,
+    "month": 8,
+    "event": "International Congress on Mathematical Physics 2021",
+    "venue": "Geneva",
+    "kind": "Oral presentation"
+  },
+  {
+    "id": "2021-41",
+    "year": 2021,
+    "month": 7,
+    "event": "Quantum Information Seminar",
+    "venue": "ETH Zürich",
+    "kind": "Oral presentation"
+  },
+  {
+    "id": "2021-42",
+    "year": 2021,
+    "month": 6,
+    "event": "XXIV Urbino Summer School on Black Holes and the Information Loss Paradox",
+    "venue": "Urbino",
+    "kind": "Oral presentation"
+  },
+  {
+    "id": "2021-43",
+    "year": 2021,
+    "month": 4,
+    "event": "Chinese Science Club Seminar",
+    "venue": "",
+    "kind": "Invited oral presentation"
+  },
+  {
+    "id": "2021-44",
+    "year": 2021,
+    "month": 4,
+    "event": "BritGrav 21",
+    "venue": "",
+    "kind": "Oral presentation"
+  },
+  {
+    "id": "2021-45",
+    "year": 2021,
+    "month": 4,
+    "event": "Causal Set Seminar",
+    "venue": "",
+    "kind": "Invited talk"
+  },
+  {
+    "id": "2021-46",
+    "year": 2021,
+    "month": 2,
+    "event": "Central European Relativity Seminar 11",
+    "venue": "Vienna",
+    "kind": "Oral presentation"
+  },
+  {
+    "id": "2021-47",
+    "year": 2021,
+    "month": 2,
+    "event": "Entropy Inequalities, Quantum Information and Quantum Physics",
+    "venue": "Institute for Pure and Applied Mathematics",
+    "kind": "Poster presentation"
+  },
+  {
+    "id": "2020-48",
+    "year": 2020,
+    "month": 12,
+    "event": "XIII Black Holes Workshop",
+    "venue": "",
+    "kind": "Oral presentation"
+  },
+  {
+    "id": "2020-49",
+    "year": 2020,
+    "month": 12,
+    "event": "31st Meeting of the Indian Association for General Relativity and Gravitation",
+    "venue": "",
+    "kind": "Oral presentation"
+  },
+  {
+    "id": "2020-atlantic",
+    "year": 2020,
+    "month": 11,
+    "event": "Atlantic General Relativity Seminar",
+    "venue": "",
+    "kind": "Oral presentation",
+    "talkUrl": "https://aarms.math.ca/event/atlantic-gr-seminar-2020-11-25/"
+  },
+  {
+    "id": "2020-51",
+    "year": 2020,
+    "month": 10,
+    "event": "Holotube Junior Seminar",
+    "venue": "",
+    "kind": "Oral presentation",
+    "talkUrl": "https://projects.ift.uam-csic.es/holotube/11703-2/"
+  },
+  {
+    "id": "2020-52",
+    "year": 2020,
+    "month": 10,
+    "event": "Quantum Information Seminar",
+    "venue": "ETH Zürich",
+    "kind": "Oral presentation"
+  },
+  {
+    "id": "2020-53",
+    "year": 2020,
+    "month": 9,
+    "event": "Virtual Conference of the Polish Society on Relativity",
+    "venue": "",
+    "kind": "Oral presentation"
+  },
+  {
+    "id": "2020-54",
+    "year": 2020,
+    "month": 8,
+    "event": "14th International Conference on Gravitation, Astrophysics and Cosmology",
+    "venue": "",
+    "kind": "Oral presentation"
+  },
+  {
+    "id": "2020-causet",
+    "year": 2020,
+    "month": 8,
+    "event": "Virtual Causet Conference 2020",
+    "venue": "",
+    "kind": "Oral presentation",
+    "presenter": "Ludovico Machet"
+  },
+  {
+    "id": "2020-56",
+    "year": 2020,
+    "month": 7,
+    "event": "String / HEP Seminar",
+    "venue": "University of California, Berkeley",
+    "kind": "Oral presentation"
+  },
+  {
+    "id": "2020-57",
+    "year": 2020,
+    "month": 2,
+    "event": "Central European Relativity Seminar 10",
+    "venue": "Albert Einstein Institute, Golm",
+    "kind": "Oral presentation"
+  },
+  {
+    "id": "2019-58",
+    "year": 2019,
+    "month": 6,
+    "event": "Loops ’19",
+    "venue": "Pennsylvania State University, USA",
+    "kind": "Oral presentation"
+  },
+  {
+    "id": "2019-59",
+    "year": 2019,
+    "month": 6,
+    "event": "It from Qubit School 2019",
+    "venue": "Kyoto, Japan",
+    "kind": "Poster presentation"
+  },
+  {
+    "id": "2019-60",
+    "year": 2019,
+    "month": 6,
+    "event": "Quantum Information and String Theory (QIST) 2019",
+    "venue": "Kyoto, Japan",
+    "kind": "Poster presentation"
+  },
+  {
+    "id": "2018-61",
+    "year": 2018,
+    "month": 8,
+    "event": "Quantum Information Seminar",
+    "venue": "ETH Zürich",
+    "kind": "Oral presentation"
+  },
+  {
+    "id": "2018-62",
+    "year": 2018,
+    "month": 1,
+    "event": "Quantum Information Processing (QIP) 2018",
+    "venue": "Delft, the Netherlands",
+    "kind": "Poster presentation"
+  }
+]
