@@ -37,7 +37,21 @@ function visual(topic, large = false) {
   } else if (topic === 'Quantum') {
     art = '<circle cx="145" cy="100" r="71"/><ellipse cx="145" cy="100" rx="71" ry="24"/><g class="quantum-meridian"><ellipse cx="145" cy="100" rx="24" ry="71" transform="rotate(32 145 100)"/></g><path d="M145 182V18M55 100h180" stroke-dasharray="3 5" opacity=".55"/><g class="quantum-state"><path d="M145 100l41-52" stroke="#8b342b" stroke-width="1.6"/><circle cx="186" cy="48" r="5" fill="#8b342b" stroke="none"/></g><text x="145" y="12" text-anchor="middle">|0⟩</text><text x="145" y="197" text-anchor="middle">|1⟩</text>';
   } else {
-    art = `<g transform="rotate(-10 145 100)"><g class="black-hole-disk" stroke="#a5a890"><ellipse cx="145" cy="105" rx="108" ry="25"/><ellipse cx="145" cy="105" rx="98" ry="19"/><ellipse cx="145" cy="105" rx="88" ry="13" stroke="#b4a18a"/></g><g fill="none" stroke="#8b342b" stroke-width="1.8"><ellipse class="black-hole-stream" pathLength="1" cx="145" cy="105" rx="108" ry="25" style="--stream-duration:9s;--stream-delay:-3s"/><ellipse class="black-hole-stream" pathLength="1" cx="145" cy="105" rx="98" ry="19" style="--stream-duration:7s;--stream-delay:-1s"/></g><circle cx="145" cy="100" r="34" fill="#f5f3ec" stroke="none"/><circle class="black-hole-shadow" cx="145" cy="100" r="29" fill="#292c26" stroke="none"/><circle cx="145" cy="100" r="32" stroke="#b59c76" stroke-width="1.4"/><circle class="black-hole-photons" pathLength="1" cx="145" cy="100" r="32" stroke="#8b342b" stroke-width="2"/><g class="black-hole-lensing" stroke="#a89577"><path d="M96 103C97 17 193 17 194 103" stroke-width="1.1"/><path d="M103 102C105 33 185 33 187 102" stroke-width=".75" opacity=".65"/><path d="M107 112C115 164 175 164 183 112" stroke-width=".8" opacity=".6"/></g><g fill="none"><path d="M37 105C72 136 218 136 253 105" stroke="#969b83" stroke-width="1.4"/><path d="M47 105C81 127 209 127 243 105" stroke="#b49a79" stroke-width="1"/><path class="black-hole-stream" pathLength="1" d="M37 105C72 136 218 136 253 105" stroke="#8b342b" stroke-width="2.2" style="--stream-duration:5s;--stream-delay:-2s"/></g></g>`;
+    // Original wireframe gravity well, projected from a square surface.
+    const project = (radius,angle) => {
+      const x = radius*Math.cos(angle), y = radius*Math.sin(angle);
+      return [145+x+.22*y, 48+.23*y+120*Math.exp(-radius/27)];
+    };
+    const trace = points => points.map(([x,y],i)=>`${i?'L':'M'}${x.toFixed(2)} ${y.toFixed(2)}`).join(' ');
+    const meridian = angle => {
+      const rim = 108/Math.max(Math.abs(Math.cos(angle)),Math.abs(Math.sin(angle)));
+      return trace(Array.from({length:49},(_,i)=>project(rim*(1-i/48),angle)));
+    };
+    const rings = [108,92,76,60,46,34,24,16,10,5].map(radius=>`<path d="${trace(Array.from({length:65},(_,i)=>project(radius,i*Math.PI/32)))}Z"/>`).join('');
+    const meridians = Array.from({length:24},(_,i)=>`<path d="${meridian(i*Math.PI/12)}"/>`).join('');
+    const signals = [.2,.5,.8].map((turn,i)=>`<path class="gravity-infall" pathLength="1" d="${meridian(turn*Math.PI)}" style="--infall-delay:-${i*1.5}s"/>`).join('');
+    const edge = [Math.atan(.22),Math.atan(.22)+Math.PI].map(angle=>`<path d="${meridian(angle)}"/>`).join('');
+    art = `<path class="gravity-sheet" d="M13 23.42H229L277 73.42H61Z"/><g class="gravity-meridians">${meridians}</g><g class="gravity-contours">${rings}</g><g class="gravity-silhouette">${edge}</g><g>${signals}</g><circle class="gravity-tip" cx="145" cy="168" r="2.4"/>`;
   }
   return `<button type="button" class="research-visual animation-toggle ${large?'large':''}" aria-label="Animate ${esc(topic)} illustration" aria-pressed="false"><svg class="research-art" viewBox="0 0 290 205" aria-hidden="true" fill="none" stroke="#777d70" stroke-width=".85"><g>${art}</g></svg></button>`;
 }
