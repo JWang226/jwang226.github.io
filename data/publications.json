@@ -19,7 +19,7 @@
     "summary": "Gives free entropy an operational meaning through the quantum memory required to describe many copies of a state with a known spectrum and an unknown eigenbasis.",
     "links": [
       {
-        "label": "Code & Lean proofs",
+        "label": "Lean certificate",
         "url": "https://github.com/JWang226/Quantum-Minimum-Description-Length"
       },
       {
@@ -54,7 +54,7 @@
     "summary": "Determines the memory cost of compressing density matrices with a known spectrum, using representation theory and matching achievability and converse bounds.",
     "links": [
       {
-        "label": "Code & Lean proofs",
+        "label": "Lean certificate",
         "url": "https://github.com/JWang226/Quantum-Minimum-Description-Length"
       },
       {
@@ -83,7 +83,7 @@
     "summary": "Finds optimal asymptotic fidelities for cloning mixed quantum states, separating the costs of uncertainty in their spectra and eigenbases.",
     "links": [
       {
-        "label": "Code & Lean proofs",
+        "label": "Lean certificate",
         "url": "https://github.com/JWang226/Cloning"
       }
     ],
@@ -131,7 +131,7 @@
     "summary": "Constructs finite-dimensional quantum channels whose two-use Holevo information exceeds twice their single-use value by an arbitrarily large amount.",
     "links": [
       {
-        "label": "Code & Lean proofs",
+        "label": "Lean certificate",
         "url": "https://github.com/JWang226/Holevo-Additivity-Gap"
       }
     ],
