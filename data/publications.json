@@ -83,6 +83,30 @@
     "featured": false
   },
   {
+    "id": "2609.28635",
+    "title": "Continuity of Regularized Channel Rényi Divergences",
+    "authors": [
+      "Jinzhao Wang",
+      "Yuxiang Yang"
+    ],
+    "year": 2026,
+    "preprintYear": 2026,
+    "topics": [
+      "Quantum"
+    ],
+    "arxiv": "https://arxiv.org/abs/2609.28635",
+    "journal": null,
+    "status": "Preprint",
+    "summary": "Shows that regularized sandwiched Rényi divergences of finite-dimensional quantum channels converge to regularized relative entropy as the Rényi order approaches one.",
+    "links": [
+      {
+        "label": "Lean certificate",
+        "url": "https://github.com/JWang226/continuity-of-regularized-channel-renyi-divergence"
+      }
+    ],
+    "featured": true
+  },
+  {
     "id": "2609.18222",
     "title": "Unbounded Holevo additivity gaps in finite dimensions",
     "authors": [
@@ -103,7 +127,7 @@
         "url": "https://github.com/JWang226/Holevo-Additivity-Gap"
       }
     ],
-    "featured": false
+    "featured": true
   },
   {
     "id": "2509.13406",
@@ -185,7 +209,7 @@
         "url": "https://www.youtube.com/watch?v=uo8OmGoz8VY"
       }
     ],
-    "featured": true
+    "featured": false
   },
   {
     "id": "2309.07436",
@@ -292,7 +316,7 @@
         "url": "https://www.youtube.com/watch?v=hEerpPZ5tcg"
       }
     ],
-    "featured": true
+    "featured": false
   },
   {
     "id": "2105.05892",
