@@ -23,7 +23,8 @@
 .gravity-contours{stroke:#89937b;stroke-width:.85}
 .gravity-silhouette{stroke:#6f7b67;stroke-width:1}
 .gravity-infall{stroke:var(--accent);stroke-width:1.8;stroke-dasharray:.07 .93;stroke-dashoffset:1;opacity:0;pointer-events:none}
-.gravity-tip{fill:var(--accent);stroke:none}
+.gravity-throat-halo{stroke:var(--accent);stroke-width:6;opacity:.12}
+.gravity-throat{stroke:var(--accent);stroke-width:2.3}
 @media(max-width:760px){#gravity .research-visual{top:16px}}
 /* A schematic cloning machine introduces the featured research paper. */
 .research-spotlight{align-self:center;min-width:0;width:100%;margin:0;padding-top:20px}

@@ -37,21 +37,28 @@ function visual(topic, large = false) {
   } else if (topic === 'Quantum') {
     art = '<circle cx="145" cy="100" r="71"/><ellipse cx="145" cy="100" rx="71" ry="24"/><g class="quantum-meridian"><ellipse cx="145" cy="100" rx="24" ry="71" transform="rotate(32 145 100)"/></g><path d="M145 182V18M55 100h180" stroke-dasharray="3 5" opacity=".55"/><g class="quantum-state"><path d="M145 100l41-52" stroke="#8b342b" stroke-width="1.6"/><circle cx="186" cy="48" r="5" fill="#8b342b" stroke="none"/></g><text x="145" y="12" text-anchor="middle">|0⟩</text><text x="145" y="197" text-anchor="middle">|1⟩</text>';
   } else {
-    // Original wireframe gravity well, projected from a square surface.
-    const project = (radius,angle) => {
+    // A smooth surface of revolution: exterior -> throat -> rounded bag.
+    const bezier = (p0,p1,p2,p3,t) => (1-t)**3*p0+3*(1-t)**2*t*p1+3*(1-t)*t*t*p2+t**3*p3;
+    const profile = (along,angle) => {
+      const rim = 108/Math.max(Math.abs(Math.cos(angle)),Math.abs(Math.sin(angle)));
+      const segment = Math.min(2,Math.floor(along)), t = along-segment;
+      const radii = [[rim,64,24,24],[24,24,62,62],[62,62,36,0]][segment];
+      const heights = [[40,40,55,91],[91,113,118,143],[143,171,190,190]][segment];
+      return [bezier(...radii,t),bezier(...heights,t)];
+    };
+    const project = (along,angle) => {
+      const [radius,height] = profile(along,angle);
       const x = radius*Math.cos(angle), y = radius*Math.sin(angle);
-      return [145+x+.22*y, 48+.23*y+120*Math.exp(-radius/27)];
+      return [145+x+.22*y, height+.23*y];
     };
     const trace = points => points.map(([x,y],i)=>`${i?'L':'M'}${x.toFixed(2)} ${y.toFixed(2)}`).join(' ');
-    const meridian = angle => {
-      const rim = 108/Math.max(Math.abs(Math.cos(angle)),Math.abs(Math.sin(angle)));
-      return trace(Array.from({length:49},(_,i)=>project(rim*(1-i/48),angle)));
-    };
-    const rings = [108,92,76,60,46,34,24,16,10,5].map(radius=>`<path d="${trace(Array.from({length:65},(_,i)=>project(radius,i*Math.PI/32)))}Z"/>`).join('');
+    const meridian = (angle,end = 2.95) => trace(Array.from({length:73},(_,i)=>project(end*i/72,angle)));
+    const ring = along => trace(Array.from({length:65},(_,i)=>project(along,i*Math.PI/32)))+'Z';
+    const rings = [.12,.28,.45,.62,.78,.9,1.28,1.55,1.8,2,2.23,2.46,2.68,2.86,2.95].map(along=>`<path d="${ring(along)}"/>`).join('');
     const meridians = Array.from({length:24},(_,i)=>`<path d="${meridian(i*Math.PI/12)}"/>`).join('');
-    const signals = [.2,.5,.8].map((turn,i)=>`<path class="gravity-infall" pathLength="1" d="${meridian(turn*Math.PI)}" style="--infall-delay:-${i*1.5}s"/>`).join('');
-    const edge = [Math.atan(.22),Math.atan(.22)+Math.PI].map(angle=>`<path d="${meridian(angle)}"/>`).join('');
-    art = `<path class="gravity-sheet" d="M13 23.42H229L277 73.42H61Z"/><g class="gravity-meridians">${meridians}</g><g class="gravity-contours">${rings}</g><g class="gravity-silhouette">${edge}</g><g>${signals}</g><circle class="gravity-tip" cx="145" cy="168" r="2.4"/>`;
+    const signals = [.2,.5,.8].map((turn,i)=>`<path class="gravity-infall" pathLength="1" d="${meridian(turn*Math.PI,2.35)}" style="--infall-delay:-${i*1.5}s"/>`).join('');
+    const edge = [Math.atan(.22),Math.atan(.22)+Math.PI].map(angle=>`<path d="${meridian(angle,3)}"/>`).join('');
+    art = `<path class="gravity-sheet" d="M13 15.16H229L277 64.84H61Z"/><g class="gravity-meridians">${meridians}</g><g class="gravity-contours">${rings}</g><g class="gravity-silhouette">${edge}</g><g>${signals}</g><path class="gravity-throat-halo" d="${ring(1)}"/><path class="gravity-throat" d="${ring(1)}"/>`;
   }
   return `<button type="button" class="research-visual animation-toggle ${large?'large':''}" aria-label="Animate ${esc(topic)} illustration" aria-pressed="false"><svg class="research-art" viewBox="0 0 290 205" aria-hidden="true" fill="none" stroke="#777d70" stroke-width=".85"><g>${art}</g></svg></button>`;
 }
