@@ -1,5 +1,6 @@
 // Smooth random angular motion on the unit sphere, projected into the SVG.
 const RADIUS = 71;
+const TRACE_DURATION = 6, TRACE_INTERVAL = .05, TRACE_BANDS = 8;
 const gaussian = random => Math.sqrt(-2*Math.log(Math.max(random(),1e-12))) * Math.cos(2*Math.PI*random());
 export function advanceBloch(vector, velocity, dt, random = Math.random) {
   const persistence = Math.exp(-dt/1.3);
@@ -25,11 +26,43 @@ function mountBloch(state) {
   const cardLink = card?.querySelector('.research-card-link');
   const dot = state.querySelector('.quantum-dot');
   const arrow = state.querySelector('.quantum-vector');
+  const trace = state.parentElement.querySelector('.quantum-trace');
+  const tracePaths = Array.from({length:TRACE_BANDS*2},(_,i) => {
+    const path = document.createElementNS('http://www.w3.org/2000/svg','path');
+    path.setAttribute('opacity',(.7*(1-Math.floor(i/2)/TRACE_BANDS)**1.4*(i%2?.45:1)).toFixed(3));
+    if (i%2) path.setAttribute('stroke-dasharray','2.5 3');
+    trace.append(path);
+    return path;
+  });
   const reducedMotion = window.matchMedia('(prefers-reduced-motion:reduce)');
   const finePointer = window.matchMedia('(hover:hover) and (pointer:fine)');
   let vector = [41/RADIUS,-52/RADIUS,Math.sqrt(1-(41*41+52*52)/(RADIUS*RADIUS))];
   let velocity = Array.from({length:3},() => .45*gaussian(Math.random));
   let visible = true, frame = null, previousTime = null;
+  let elapsed = 0, lastSample = 0;
+  const history = [{...projectBloch(vector),time:0}];
+  function drawTrace() {
+    while (history.length>1 && history[1].time<elapsed-TRACE_DURATION) history.shift();
+    const paths = Array(TRACE_BANDS*2).fill('');
+    let lastPath = -1;
+    function segment(a,b,back) {
+      const age = elapsed-(a.time+b.time)/2;
+      const band = Math.min(TRACE_BANDS-1,Math.floor(age/TRACE_DURATION*TRACE_BANDS));
+      const index = band*2+(back?1:0);
+      paths[index] += `${lastPath===index?'':`M${a.x.toFixed(2)} ${a.y.toFixed(2)}`}L${b.x.toFixed(2)} ${b.y.toFixed(2)}`;
+      lastPath = index;
+    }
+    for (let i=1;i<history.length;i++) {
+      const a = history[i-1], b = history[i];
+      if (a.depth*b.depth<0) {
+        const fraction = a.depth/(a.depth-b.depth);
+        const crossing = Object.fromEntries(['x','y','time'].map(key => [key,a[key]+(b[key]-a[key])*fraction]));
+        segment(a,crossing,a.depth<0);
+        segment(crossing,b,b.depth<0);
+      } else segment(a,b,(a.depth+b.depth)<0);
+    }
+    tracePaths.forEach((path,i) => path.setAttribute('d',paths[i]));
+  }
   function active() {
     return visible && !document.hidden && !reducedMotion.matches &&
       (button.classList.contains('is-animating') || (finePointer.matches &&
@@ -49,9 +82,16 @@ function mountBloch(state) {
     frame = null;
     if (!active()) { previousTime = null; return; }
     if (previousTime !== null) {
-      const next = advanceBloch(vector,velocity,Math.min((time-previousTime)/1000,.05));
+      const dt = Math.min((time-previousTime)/1000,.05);
+      const next = advanceBloch(vector,velocity,dt);
       vector = next.vector;
       velocity = next.velocity;
+      elapsed += dt;
+      if (elapsed-lastSample>=TRACE_INTERVAL) {
+        history.push({...projectBloch(vector),time:elapsed});
+        lastSample = elapsed;
+        drawTrace();
+      }
       draw();
     }
     previousTime = time;

@@ -17,6 +17,7 @@
 .network-signal{opacity:0;pointer-events:none}
 .network-signal{stroke-dasharray:.14 .86;stroke-dashoffset:1}
 .network-node{transform-box:fill-box;transform-origin:center}
+.quantum-trace{fill:none;stroke:#8b342b;stroke-width:1.4;stroke-linecap:round;stroke-linejoin:round;pointer-events:none}
 .gravity-sheet{stroke:#9bA18c;stroke-width:.9}
 .gravity-meridians{stroke:#a2a78f;stroke-width:.7;opacity:.8}
 .gravity-contours{stroke:#89937b;stroke-width:.85}
