@@ -1,16 +1,28 @@
 const menu = document.querySelector('.menu-toggle');
 const nav = document.querySelector('#main-nav');
+const mobileNavigation = window.matchMedia('(max-width:760px), (max-width:950px) and (max-height:500px)');
+function closeMenu(returnFocus = false) {
+  menu?.setAttribute('aria-expanded', 'false');
+  nav?.classList.remove('is-open');
+  if (returnFocus) menu?.focus();
+}
 menu?.addEventListener('click', () => {
   const open = menu.getAttribute('aria-expanded') !== 'true';
   menu.setAttribute('aria-expanded', String(open));
-  nav.classList.toggle('is-open', open);
+  nav?.classList.toggle('is-open', open);
 });
+nav?.addEventListener('click', (event) => {
+  if (event.target.closest('a')) closeMenu();
+});
+function closeMenuOutside(event) {
+  if (menu?.getAttribute('aria-expanded') === 'true' && !menu.contains(event.target) && !nav?.contains(event.target)) closeMenu();
+}
+document.addEventListener('click', closeMenuOutside);
+document.addEventListener('focusin', closeMenuOutside);
 document.addEventListener('keydown', (event) => {
-  if (event.key === 'Escape') {
-    menu?.setAttribute('aria-expanded', 'false');
-    nav?.classList.remove('is-open');
-  }
+  if (event.key === 'Escape' && menu?.getAttribute('aria-expanded') === 'true') closeMenu(true);
 });
+mobileNavigation.addEventListener('change', () => closeMenu());
 const search = document.querySelector('#publication-search');
 const filters = document.querySelectorAll('[data-topic-filter]');
 let activeTopic = 'All';

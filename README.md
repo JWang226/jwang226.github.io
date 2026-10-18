@@ -15,6 +15,8 @@ npm run serve
 
 Open [localhost:4173](http://localhost:4173). Rebuild after editing source files and refresh the browser. The generated website is in `dist/`; edit source files rather than generated HTML. `npm run check` validates the built website.
 
+After layout changes, check all five pages at 320, 360, 390, and 430 pixels wide, plus 844 × 390 landscape. Verify the mobile menu, publication search and filters, and CV year toggles. Phone controls use at least 44-pixel tap areas and the search input uses 16-pixel text.
+
 ## Edit content
 
 - `data/site.json`: name, affiliation, social links, site URL, and search description.
