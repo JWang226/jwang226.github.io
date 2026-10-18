@@ -48,6 +48,7 @@
       "Quantum"
     ],
     "arxiv": "https://arxiv.org/abs/2610.06742",
+    "projectWebsite": "https://wangjinzhao.com/Quantum-Minimum-Description-Length/",
     "journal": null,
     "status": "Preprint",
     "summary": "Determines the memory cost of compressing density matrices with a known spectrum, using representation theory and matching achievability and converse bounds.",
@@ -76,10 +77,16 @@
       "Quantum"
     ],
     "arxiv": "https://arxiv.org/abs/2609.35986",
+    "projectWebsite": "https://wangjinzhao.com/Cloning/",
     "journal": null,
     "status": "Preprint",
     "summary": "Finds optimal asymptotic fidelities for cloning mixed quantum states, separating the costs of uncertainty in their spectra and eigenbases.",
-    "links": [],
+    "links": [
+      {
+        "label": "Code & Lean proofs",
+        "url": "https://github.com/JWang226/Cloning"
+      }
+    ],
     "featured": false
   },
   {
@@ -118,6 +125,7 @@
       "Quantum"
     ],
     "arxiv": "https://arxiv.org/abs/2609.18222",
+    "projectWebsite": "https://wangjinzhao.com/Holevo-Additivity-Gap/",
     "journal": null,
     "status": "Preprint",
     "summary": "Constructs finite-dimensional quantum channels whose two-use Holevo information exceeds twice their single-use value by an arbitrarily large amount.",

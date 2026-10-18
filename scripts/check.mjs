@@ -30,7 +30,7 @@ for(const p of papers) {
   assert(p.title && p.authors.includes('Jinzhao Wang'),`Invalid publication: ${p.id}`);
   assert(Number.isInteger(p.year) && p.year>=2010 && p.year<=new Date().getUTCFullYear(),`Invalid year: ${p.id}`);
   assert(p.arxiv || p.journal?.url,`Paper needs a verified source: ${p.id}`);
-  for(const url of [p.arxiv,p.journal?.url,...p.links.map(l=>l.url)].filter(Boolean)) assert(new URL(url).protocol==='https:',`Use HTTPS: ${p.id}`);
+  for(const url of [p.arxiv,p.journal?.url,p.projectWebsite,...p.links.map(l=>l.url)].filter(Boolean)) assert(new URL(url).protocol==='https:',`Use HTTPS: ${p.id}`);
 }
 for(const route of ['index.html','research/index.html','publications/index.html','blog/index.html','cv/index.html','404.html']) assert(htmlByFile.has(path.join(root,route)),`Missing page: ${route}`);
 const home=htmlByFile.get(path.join(root,'index.html'));
