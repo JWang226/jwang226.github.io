@@ -76,3 +76,30 @@ window.addEventListener('afterprint', () => {
   presentationYears.forEach((year,index) => { year.open = presentationPrintState[index]; });
   presentationPrintState = undefined;
 });
+
+// Real buttons make tap-to-toggle independent of the homepage research links.
+const illustrationButtons = [...document.querySelectorAll('.animation-toggle')];
+const reducedMotion = window.matchMedia('(prefers-reduced-motion:reduce)');
+function stopIllustrations() {
+  illustrationButtons.forEach(button => {
+    button.classList.remove('is-animating');
+    button.setAttribute('aria-pressed', 'false');
+  });
+}
+function syncIllustrationMotion() {
+  stopIllustrations();
+  illustrationButtons.forEach(button => { button.disabled = reducedMotion.matches; });
+}
+illustrationButtons.forEach(button => button.addEventListener('click', () => {
+  const play = button.getAttribute('aria-pressed') !== 'true';
+  stopIllustrations();
+  if (play && !reducedMotion.matches) {
+    button.classList.add('is-animating');
+    button.setAttribute('aria-pressed', 'true');
+  }
+}));
+reducedMotion.addEventListener('change', syncIllustrationMotion);
+document.addEventListener('visibilitychange', () => {
+  if (document.hidden) stopIllustrations();
+});
+syncIllustrationMotion();

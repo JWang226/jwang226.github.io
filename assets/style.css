@@ -19,20 +19,25 @@
 .network-node{transform-box:fill-box;transform-origin:center}
 .quantum-state,.quantum-meridian,.gravity-grid,.gravity-core,.gravity-ripple{transform-box:view-box;transform-origin:145px 100px}
 .landscape-orbits,.landscape-center{transform-box:view-box;transform-origin:240px 193px}
-@media(prefers-reduced-motion:no-preference) and (hover:hover) and (pointer:fine){
-  .landscape:hover .landscape-orbits{animation:landscape-orbit 18s linear infinite}
-  .landscape:hover .landscape-field path{animation:landscape-wave 3.6s ease-in-out infinite;animation-delay:var(--wave-delay)}
-  .landscape:hover .landscape-center{animation:information-pulse 2s ease-in-out infinite}
-  :is(.research-card:is(:hover,:focus-visible), .research-detail .research-visual:hover) .network-signal{animation:network-flow 2s linear infinite}
-  :is(.research-card:is(:hover,:focus-visible), .research-detail .research-visual:hover) .network-signal:nth-child(2){animation-delay:.6s}
-  :is(.research-card:is(:hover,:focus-visible), .research-detail .research-visual:hover) .network-signal:nth-child(3){animation-delay:1.2s}
-  :is(.research-card:is(:hover,:focus-visible), .research-detail .research-visual:hover) .network-node{animation:network-node-pulse 2s ease-in-out infinite;animation-delay:var(--node-delay)}
-  :is(.research-card:is(:hover,:focus-visible), .research-detail .research-visual:hover) .quantum-state{animation:quantum-precession 3.6s ease-in-out infinite}
-  :is(.research-card:is(:hover,:focus-visible), .research-detail .research-visual:hover) .quantum-meridian{animation:quantum-meridian 4.8s ease-in-out infinite}
-  :is(.research-card:is(:hover,:focus-visible), .research-detail .research-visual:hover) .gravity-grid{animation:spacetime-flex 3s ease-in-out infinite}
-  :is(.research-card:is(:hover,:focus-visible), .research-detail .research-visual:hover) .gravity-core{animation:information-pulse 3s ease-in-out infinite}
-  :is(.research-card:is(:hover,:focus-visible), .research-detail .research-visual:hover) .gravity-ripple{animation:gravity-ripple 2.4s ease-out infinite}
-  :is(.research-card:is(:hover,:focus-visible), .research-detail .research-visual:hover) .gravity-ripple:nth-child(2){animation-delay:1.2s}
+/* Keep the illustration controls separate from the homepage's research links. */
+.research-card-link:after{content:"";position:absolute;inset:0;z-index:1}
+.research-visual.animation-toggle{position:relative;z-index:2;padding:0;border:0;background:transparent;color:inherit;border-radius:3px}
+.research-art{display:block;width:100%;height:100%}
+@media(hover:none),(pointer:coarse){
+  .animation-toggle:not(:disabled):after{content:"Animate";position:absolute;right:0;bottom:0;font:11px/1.5 var(--sans);color:var(--accent);background:var(--paper);padding:2px 5px;border:1px solid var(--rule);border-radius:3px}
+  .animation-toggle[aria-pressed=true]:after{content:"Pause"}
+}
+@media(prefers-reduced-motion:no-preference){
+  .research-visual.is-animating .network-signal{animation:network-flow 2s linear infinite}
+  .research-visual.is-animating .network-signal:nth-child(2){animation-delay:.6s}
+  .research-visual.is-animating .network-signal:nth-child(3){animation-delay:1.2s}
+  .research-visual.is-animating .network-node{animation:network-node-pulse 2s ease-in-out infinite;animation-delay:var(--node-delay)}
+  .research-visual.is-animating .quantum-state{animation:quantum-precession 3.6s ease-in-out infinite}
+  .research-visual.is-animating .quantum-meridian{animation:quantum-meridian 4.8s ease-in-out infinite}
+  .research-visual.is-animating .gravity-grid{animation:spacetime-flex 3s ease-in-out infinite}
+  .research-visual.is-animating .gravity-core{animation:information-pulse 3s ease-in-out infinite}
+  .research-visual.is-animating .gravity-ripple{animation:gravity-ripple 2.4s ease-out infinite}
+  .research-visual.is-animating .gravity-ripple:nth-child(2){animation-delay:1.2s}
   @keyframes landscape-orbit{to{transform:rotate(360deg)}}
   @keyframes landscape-wave{0%,100%{transform:translateY(0);opacity:1}50%{transform:translateY(5px);opacity:.65}}
   @keyframes information-pulse{0%,100%{transform:scale(1)}50%{transform:scale(1.12)}}
@@ -42,6 +47,21 @@
   @keyframes quantum-meridian{0%,100%{transform:rotate(0)}50%{transform:rotate(16deg)}}
   @keyframes spacetime-flex{0%,100%{transform:scale(1,1)}50%{transform:scale(1.025,.95)}}
   @keyframes gravity-ripple{0%{transform:scale(1);opacity:0}15%{opacity:.5}100%{transform:scale(3.4);opacity:0}}
+}
+@media(prefers-reduced-motion:no-preference) and (hover:hover) and (pointer:fine){
+  .landscape:hover .landscape-orbits{animation:landscape-orbit 18s linear infinite}
+  .landscape:hover .landscape-field path{animation:landscape-wave 3.6s ease-in-out infinite;animation-delay:var(--wave-delay)}
+  .landscape:hover .landscape-center{animation:information-pulse 2s ease-in-out infinite}
+  :is(.research-card:is(:hover,:has(.research-card-link:focus-visible)), .research-detail .research-visual:hover) .network-signal{animation:network-flow 2s linear infinite}
+  :is(.research-card:is(:hover,:has(.research-card-link:focus-visible)), .research-detail .research-visual:hover) .network-signal:nth-child(2){animation-delay:.6s}
+  :is(.research-card:is(:hover,:has(.research-card-link:focus-visible)), .research-detail .research-visual:hover) .network-signal:nth-child(3){animation-delay:1.2s}
+  :is(.research-card:is(:hover,:has(.research-card-link:focus-visible)), .research-detail .research-visual:hover) .network-node{animation:network-node-pulse 2s ease-in-out infinite;animation-delay:var(--node-delay)}
+  :is(.research-card:is(:hover,:has(.research-card-link:focus-visible)), .research-detail .research-visual:hover) .quantum-state{animation:quantum-precession 3.6s ease-in-out infinite}
+  :is(.research-card:is(:hover,:has(.research-card-link:focus-visible)), .research-detail .research-visual:hover) .quantum-meridian{animation:quantum-meridian 4.8s ease-in-out infinite}
+  :is(.research-card:is(:hover,:has(.research-card-link:focus-visible)), .research-detail .research-visual:hover) .gravity-grid{animation:spacetime-flex 3s ease-in-out infinite}
+  :is(.research-card:is(:hover,:has(.research-card-link:focus-visible)), .research-detail .research-visual:hover) .gravity-core{animation:information-pulse 3s ease-in-out infinite}
+  :is(.research-card:is(:hover,:has(.research-card-link:focus-visible)), .research-detail .research-visual:hover) .gravity-ripple{animation:gravity-ripple 2.4s ease-out infinite}
+  :is(.research-card:is(:hover,:has(.research-card-link:focus-visible)), .research-detail .research-visual:hover) .gravity-ripple:nth-child(2){animation-delay:1.2s}
 }
 .research-writing{border-top:1px solid var(--rule);padding-top:20px}
 .research-writing-meta{font-size:var(--entry-meta);color:var(--muted);line-height:1.7}
