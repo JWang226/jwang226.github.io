@@ -22,7 +22,7 @@ Open [localhost:4173](http://localhost:4173). Rebuild after editing source files
 - `data/presentations.json`: the full CV presentation list, grouped by year and month. A `talkUrl` matches a verified resource in `data/talks.json`; `presenter` explicitly credits a presentation delivered by someone else.
 - `data/talks.json`: verified talk resources and recordings, linked to publications by `arxivIds`. Add each recording to the relevant paper’s `links` array as well. Identify every `speaker`; coauthor talks require a recording and use `Coauthor talk · Speaker Name` labels. Omit coauthor event links and CV entries without a verified recording.
 - `data/sources.json`: the source audit and corrections to older CV metadata. Record primary sources here when adding or updating publications. Use full HTTPS URLs and omit links that have not been verified.
-- `data/external-posts.json`: writing published elsewhere, with its original title, date, and source link.
+- `data/external-posts.json`: writing published elsewhere, with its original title, date, source link, and attribution. Set `researchTopics` (for example `["AI/LLM"]`) to feature an article in that research section; `kind` distinguishes coauthored articles from guest writing.
 - `scripts/build.mjs`: page copy, research descriptions, and the online CV.
 - `assets/`: styles, scripts, fonts, and images.
 

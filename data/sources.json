@@ -231,6 +231,10 @@
     {
       "url": "https://sites.google.com/view/geoflow/mar-2023-meeting",
       "supports": "GeoFlow March 2023 date, title, speaker and public recording link; no paper mapping claimed"
+    },
+    {
+      "url": "https://rocm.blogs.amd.com/software-tools-optimization/flydsl-customized-attention/README.html",
+      "supports": "AMD ROCm Blogs article title, 17 September 2026 publication date, Jinzhao Wang coauthor credit, and FlyDSL custom diffusion-attention kernel subject. Linked as technical writing in AI/LLM and on the blog, without treating it as an academic paper or asserting numerical speedups."
     }
   ],
   "cvPresentations": {
