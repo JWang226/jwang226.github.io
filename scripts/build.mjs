@@ -26,14 +26,17 @@ function visual(topic, large = false) {
   let art = '';
   if (topic === 'AI/LLM') {
     const layers = [[40,[55,100,145]],[110,[35,78,122,165]],[180,[55,100,145]],[250,[78,122]]];
-    for (let i=0;i<layers.length-1;i++) for (const y of layers[i][1]) for (const z of layers[i+1][1]) art += `<line x1="${layers[i][0]}" y1="${y}" x2="${layers[i+1][0]}" y2="${z}" stroke="#bcb8ad" stroke-width=".8"/>`;
-    for (const [x,ys] of layers) for (const y of ys) art += `<circle cx="${x}" cy="${y}" r="5" fill="${x === 250 ? '#8b342b' : '#f5f3ec'}" stroke="${x === 250 ? '#8b342b' : '#5b625b'}"/>`;
+    let wires = '';
+    for (let i=0;i<layers.length-1;i++) for (const y of layers[i][1]) for (const z of layers[i+1][1]) wires += `<line x1="${layers[i][0]}" y1="${y}" x2="${layers[i+1][0]}" y2="${z}" stroke="#bcb8ad" stroke-width=".8"/>`;
+    art = `<g class="network-wires">${wires}</g><g class="network-signals" stroke="#8b342b" stroke-width="1.7"><path class="network-signal" pathLength="1" d="M40 55L110 78L180 100L250 78"/><path class="network-signal" pathLength="1" d="M40 100L110 122L180 145L250 122"/><path class="network-signal" pathLength="1" d="M40 145L110 165L180 100L250 122"/></g>`;
+    layers.forEach(([x,ys],layer) => ys.forEach((y,index) => { art += `<circle class="network-node" style="--node-delay:${layer*220+index*75}ms" cx="${x}" cy="${y}" r="5" fill="${x === 250 ? '#8b342b' : '#f5f3ec'}" stroke="${x === 250 ? '#8b342b' : '#5b625b'}"/>`; }));
   } else if (topic === 'Quantum') {
-    art = '<circle cx="145" cy="100" r="71"/><ellipse cx="145" cy="100" rx="71" ry="24"/><ellipse cx="145" cy="100" rx="24" ry="71" transform="rotate(32 145 100)"/><path d="M145 182V18M55 100h180" stroke-dasharray="3 5" opacity=".55"/><path d="M145 100l41-52" stroke="#8b342b" stroke-width="1.6"/><circle cx="186" cy="48" r="5" fill="#8b342b" stroke="none"/><text x="145" y="12" text-anchor="middle">|0⟩</text><text x="145" y="197" text-anchor="middle">|1⟩</text>';
+    art = '<circle cx="145" cy="100" r="71"/><ellipse cx="145" cy="100" rx="71" ry="24"/><g class="quantum-meridian"><ellipse cx="145" cy="100" rx="24" ry="71" transform="rotate(32 145 100)"/></g><path d="M145 182V18M55 100h180" stroke-dasharray="3 5" opacity=".55"/><g class="quantum-state"><path d="M145 100l41-52" stroke="#8b342b" stroke-width="1.6"/><circle cx="186" cy="48" r="5" fill="#8b342b" stroke="none"/></g><text x="145" y="12" text-anchor="middle">|0⟩</text><text x="145" y="197" text-anchor="middle">|1⟩</text>';
   } else {
-    for(let i=0;i<9;i++) {const y=35+i*17; art += `<path d="M25 ${y}Q80 ${y-8} 112 ${100+(y-100)*.3}Q145 ${100+(y-100)*.1} 178 ${100+(y-100)*.3}Q210 ${y-8} 265 ${y}"/>`;}
-    for(let i=0;i<11;i++) {const x=30+i*23; art += `<path d="M${x} 27Q${145+(x-145)*.9} 66 ${145+(x-145)*.36} 100Q${145+(x-145)*.9} 134 ${x} 173"/>`;}
-    art += '<circle cx="145" cy="100" r="13" fill="#8b342b" stroke="#8b342b"/><ellipse cx="145" cy="100" rx="25" ry="9" stroke="#8b342b"/>';
+    let grid = '';
+    for(let i=0;i<9;i++) {const y=35+i*17; grid += `<path d="M25 ${y}Q80 ${y-8} 112 ${100+(y-100)*.3}Q145 ${100+(y-100)*.1} 178 ${100+(y-100)*.3}Q210 ${y-8} 265 ${y}"/>`;}
+    for(let i=0;i<11;i++) {const x=30+i*23; grid += `<path d="M${x} 27Q${145+(x-145)*.9} 66 ${145+(x-145)*.36} 100Q${145+(x-145)*.9} 134 ${x} 173"/>`;}
+    art = `<g class="gravity-grid">${grid}</g><g stroke="#8b342b"><ellipse class="gravity-ripple" cx="145" cy="100" rx="25" ry="9"/><ellipse class="gravity-ripple" cx="145" cy="100" rx="25" ry="9"/></g><g class="gravity-core"><circle cx="145" cy="100" r="13" fill="#8b342b" stroke="#8b342b"/><ellipse cx="145" cy="100" rx="25" ry="9" stroke="#8b342b"/></g>`;
   }
   return `<svg class="research-visual ${large?'large':''}" viewBox="0 0 290 205" aria-hidden="true" fill="none" stroke="#777d70" stroke-width=".85"><g>${art}</g></svg>`;
 }
@@ -42,9 +45,9 @@ function landscape() {
   let paths = '';
   for (let i=0;i<18;i++) {
     const y = 63+i*15;
-    paths += `<path d="M25 ${y}C92 ${y-30} 120 ${y+28} 176 ${y-5}S258 ${y-42} 300 ${y-12}S369 ${y+32} 450 ${y-10}"/>`;
+    paths += `<path style="--wave-delay:${-i*130}ms" d="M25 ${y}C92 ${y-30} 120 ${y+28} 176 ${y-5}S258 ${y-42} 300 ${y-12}S369 ${y+32} 450 ${y-10}"/>`;
   }
-  return `<figure class="landscape"><svg viewBox="0 0 480 390" role="img" aria-labelledby="landscape-title"><title id="landscape-title">An abstract information landscape connecting intelligence, quantum theory, and spacetime</title><defs><clipPath id="landscape-clip"><rect x="20" y="30" width="440" height="325" rx="170"/></clipPath></defs><g fill="none" stroke="#a4aa96" stroke-width=".85" clip-path="url(#landscape-clip)">${paths}</g><ellipse cx="240" cy="193" rx="128" ry="128" fill="none" stroke="#8b342b" stroke-width=".8" transform="rotate(-27 240 193)"/><ellipse cx="240" cy="193" rx="172" ry="65" fill="none" stroke="#8b342b" stroke-width=".8" transform="rotate(-39 240 193)"/><circle cx="240" cy="193" r="5" fill="#8b342b"/><circle cx="151" cy="91" r="4" fill="#8b342b"/><circle cx="368" cy="194" r="4" fill="#8b342b"/><circle cx="164" cy="299" r="4" fill="#8b342b"/><g font-family="DM Sans, sans-serif" font-size="10" letter-spacing="1.4" fill="#66695e"><text x="103" y="68">INTELLIGENCE</text><text x="373" y="178">QUANTUM</text><text x="112" y="328">SPACETIME</text></g></svg><figcaption>Different scales. Shared questions.</figcaption></figure>`;
+  return `<figure class="landscape"><svg viewBox="0 0 480 390" role="img" aria-labelledby="landscape-title"><title id="landscape-title">An abstract information landscape connecting intelligence, quantum theory, and spacetime</title><defs><clipPath id="landscape-clip"><rect x="20" y="30" width="440" height="325" rx="170"/></clipPath></defs><g class="landscape-field" fill="none" stroke="#a4aa96" stroke-width=".85" clip-path="url(#landscape-clip)">${paths}</g><g class="landscape-orbits"><ellipse cx="240" cy="193" rx="128" ry="128" fill="none" stroke="#8b342b" stroke-width=".8" transform="rotate(-27 240 193)"/><ellipse cx="240" cy="193" rx="172" ry="65" fill="none" stroke="#8b342b" stroke-width=".8" transform="rotate(-39 240 193)"/><circle cx="151" cy="91" r="4" fill="#8b342b"/><circle cx="368" cy="194" r="4" fill="#8b342b"/><circle cx="164" cy="299" r="4" fill="#8b342b"/></g><circle class="landscape-center" cx="240" cy="193" r="5" fill="#8b342b"/><g font-family="DM Sans, sans-serif" font-size="10" letter-spacing="1.4" fill="#66695e"><text x="103" y="68">INTELLIGENCE</text><text x="373" y="178">QUANTUM</text><text x="112" y="328">SPACETIME</text></g></svg><figcaption>Different scales. Shared questions.</figcaption></figure>`;
 }
 
 function shell(title, current, body, description = site.description, route = '/') {
