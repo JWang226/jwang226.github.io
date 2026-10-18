@@ -26,7 +26,7 @@ Open [localhost:4173](http://localhost:4173). Rebuild after editing source files
 - `scripts/build.mjs`: page copy, research descriptions, and the online CV.
 - `assets/`: styles, scripts, fonts, and images.
 
-The CV page offers **Print / Save PDF**. The supplied source CV is not published: its phone number and referee contact details are excluded from the public version, and the current affiliation reflects the owner's confirmed update. Update the online CV in `scripts/build.mjs` when experience changes.
+The CV page groups presentations into collapsible years, with the newest year expanded by default. Year links open their target group. **Print / Save PDF** includes every year and restores the screen’s expanded groups afterward. The supplied source CV is not published: its phone number and referee contact details are excluded from the public version, and the current affiliation reflects the owner's confirmed update. Update the online CV in `scripts/build.mjs` when experience changes.
 
 ### Add a blog post
 

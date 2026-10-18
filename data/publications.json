@@ -258,6 +258,10 @@
       {
         "label": "GeoFlow 2025",
         "url": "https://sites.google.com/view/geoflow/may-2025-meeting"
+      },
+      {
+        "label": "Purdue recording",
+        "url": "https://www.youtube.com/watch?v=b14vcqFHVcU"
       }
     ],
     "featured": false
@@ -320,6 +324,10 @@
       {
         "label": "Slides",
         "url": "https://www2.yukawa.kyoto-u.ac.jp/~qft.web/2021/slides/wang-jinzhao.pdf"
+      },
+      {
+        "label": "Urbino recording",
+        "url": "https://www.youtube.com/watch?v=fWzpahRtq1w"
       }
     ],
     "featured": false
@@ -454,6 +462,14 @@
       {
         "label": "Holotube slides",
         "url": "https://projects.ift.uam-csic.es/holotube/wp-content/uploads/2020/10/Holotube_Jinzhao_Wang-2.pdf"
+      },
+      {
+        "label": "Berkeley recording",
+        "url": "https://www.youtube.com/watch?v=gTwXfzjhdE8"
+      },
+      {
+        "label": "CERS recording",
+        "url": "https://www.youtube.com/watch?v=5bImMO9-FIA"
       }
     ],
     "featured": false

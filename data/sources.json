@@ -94,7 +94,10 @@
       "sources": [
         "https://arxiv.org/abs/2405.13886",
         "https://doi.org/10.22331/q-2024-12-12-1564",
-        "https://sites.google.com/view/geoflow/may-2025-meeting"
+        "https://sites.google.com/view/geoflow/may-2025-meeting",
+        "https://www.youtube.com/watch?v=b14vcqFHVcU",
+        "https://nimalashkari.com/journalclub/",
+        "https://www.youtube.com/playlist?list=PLxU3vHZccQj64m9zsQR74D5WP1z1g4t1J"
       ]
     },
     {
@@ -112,7 +115,10 @@
         "https://arxiv.org/abs/2105.05892",
         "https://doi.org/10.22331/q-2022-02-16-655",
         "https://www2.yukawa.kyoto-u.ac.jp/~soken.editorial/sokendenshi/vol37/1/2021/program-soryushiron-kenkyu.html",
-        "https://www2.yukawa.kyoto-u.ac.jp/~qft.web/2021/slides/wang-jinzhao.pdf"
+        "https://www2.yukawa.kyoto-u.ac.jp/~qft.web/2021/slides/wang-jinzhao.pdf",
+        "https://www.youtube.com/watch?v=fWzpahRtq1w",
+        "https://sites.google.com/view/xxivurbinosummerschool/videos/day-3-lectures",
+        "https://sites.google.com/view/xxivurbinosummerschool/program/day-3"
       ]
     },
     {
@@ -156,7 +162,12 @@
         "https://aarms.math.ca/event/atlantic-gr-seminar-2020-11-25/",
         "https://projects.ift.uam-csic.es/holotube/11703-2/",
         "https://projects.ift.uam-csic.es/holotube/600-2/",
-        "https://projects.ift.uam-csic.es/holotube/wp-content/uploads/2020/10/Holotube_Jinzhao_Wang-2.pdf"
+        "https://projects.ift.uam-csic.es/holotube/wp-content/uploads/2020/10/Holotube_Jinzhao_Wang-2.pdf",
+        "https://www.youtube.com/watch?v=gTwXfzjhdE8",
+        "https://www-theory.lbl.gov/?event=jinzhao-wang-eth-zurich-outer-entropy-bartnik-bray-inner-mass-and-the-gravitational-ant-conjecture",
+        "https://www.youtube.com/watch?v=5bImMO9-FIA",
+        "https://cers.univie.ac.at/cers11/schedule.html",
+        "https://cers.univie.ac.at/cers11/abstracts.html#JinzhaoWang"
       ]
     },
     {
@@ -230,6 +241,22 @@
       "The GGI talk is listed in July 2022, correcting the June date in the CV using the official programme: 1 July 2022, 11:30–12:30.",
       "The GeoFlow March 2023 recording is linked on the CV, without assigning it to a paper because its publication mapping could not be confirmed.",
       "Research, supervision and teaching sections remain omitted at the owner’s earlier request. Private contact information and referee details are not published."
+    ]
+  },
+  "youtubeRecordingReview": {
+    "checkedOn": "2026-10-17",
+    "query": "https://www.youtube.com/results?search_query=jinzhao+wang",
+    "addedVideos": [
+      "https://www.youtube.com/watch?v=fWzpahRtq1w",
+      "https://www.youtube.com/watch?v=gTwXfzjhdE8",
+      "https://www.youtube.com/watch?v=5bImMO9-FIA",
+      "https://www.youtube.com/watch?v=b14vcqFHVcU"
+    ],
+    "notes": [
+      "Matched video titles and uploader channels against official event programmes, organizer video pages, and the existing CV.",
+      "The IAS YouTube result K0ivzrqsGXE is the same December 2023 Bekenstein talk already linked through the official IAS video page, so it is not duplicated.",
+      "Excluded videos by similarly named researchers and workshop talks where Jinzhao Wang appears only as an organizer.",
+      "Purdue month follows the CV; its YouTube upload date is recorded separately from the unverified exact event day."
     ]
   }
 }

@@ -42,6 +42,10 @@ const talks=JSON.parse(await readFile('data/talks.json','utf8'));
 const talkUrls=new Set(talks.map(t=>t.url));
 assert(new Set(presentations.map(p=>p.id)).size===presentations.length,'Presentation IDs must be unique');
 assert([...cv.matchAll(/class="cv-talk-entry"/g)].length===presentations.length,'The full presentation list must appear on the CV');
+const yearPanels=[...cv.matchAll(/<details class="cv-talk-year" id="talks-(\d{4})"([^>]*)>/g)];
+assert(yearPanels.length===new Set(presentations.map(p=>p.year)).size,'Each presentation year must be collapsible');
+const expandedYears=yearPanels.filter(([,year,attributes])=>/\bopen\b/.test(attributes));
+assert(expandedYears.length===1 && Number(expandedYears[0][1])===Math.max(...presentations.map(p=>p.year)),'Only the most recent presentation year should be expanded by default');
 for(const p of presentations) {
   assert(p.event && p.kind && Number.isInteger(p.year) && Number.isInteger(p.month) && p.month>=1 && p.month<=12,`Invalid presentation: ${p.id}`);
   if(p.talkUrl) assert(talkUrls.has(p.talkUrl),`Missing verified talk resource: ${p.id}`);

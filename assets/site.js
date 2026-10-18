@@ -44,3 +44,23 @@ document.querySelector('[data-clear-search]')?.addEventListener('click', () => {
   search.focus();
 });
 document.querySelector('[data-print]')?.addEventListener('click', () => window.print());
+
+const presentationYears = [...document.querySelectorAll('details.cv-talk-year')];
+function openPresentationYear(hash) {
+  const year = presentationYears.find(year => '#'+year.id === hash);
+  if (year) year.open = true;
+}
+openPresentationYear(window.location.hash);
+window.addEventListener('hashchange', () => openPresentationYear(window.location.hash));
+document.querySelectorAll('.cv-talk-index a').forEach(link => link.addEventListener('click', () => openPresentationYear(link.hash)));
+let presentationPrintState;
+window.addEventListener('beforeprint', () => {
+  if (presentationPrintState) return;
+  presentationPrintState = presentationYears.map(year => year.open);
+  presentationYears.forEach(year => { year.open = true; });
+});
+window.addEventListener('afterprint', () => {
+  if (!presentationPrintState) return;
+  presentationYears.forEach((year,index) => { year.open = presentationPrintState[index]; });
+  presentationPrintState = undefined;
+});

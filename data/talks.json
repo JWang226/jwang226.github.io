@@ -76,6 +76,22 @@
     "paperTitle": "Quantum Energy Teleportation versus Information Teleportation"
   },
   {
+    "title": "Quantum Energy Teleportation versus Information Teleportation",
+    "date": "2024-10",
+    "uploadedOn": "2024-10-30",
+    "venue": "High Energy Theory Seminar, Purdue University",
+    "url": "https://www.youtube.com/watch?v=b14vcqFHVcU",
+    "sourceUrl": "https://nimalashkari.com/journalclub/",
+    "playlistUrl": "https://www.youtube.com/playlist?list=PLxU3vHZccQj64m9zsQR74D5WP1z1g4t1J",
+    "channel": "Lashkari's Research Group",
+    "type": "Recording",
+    "speaker": "Jinzhao Wang",
+    "arxivIds": [
+      "2405.13886"
+    ],
+    "mappingNote": "The video appears in the Purdue High Energy Theory seminars playlist linked by the organizer. Seminar month is from the owner-provided CV; the exact event day is unverified. 30 October 2024 is the upload date, not an asserted talk date."
+  },
+  {
     "title": "What exactly does Bekenstein bound?",
     "date": "2024-01-18",
     "venue": "QIP 2024, Taipei",
@@ -210,6 +226,34 @@
     "paperTitle": "The refined quantum extremal surface prescription from the asymptotic equipartition property"
   },
   {
+    "title": "The refined quantum extremal surface prescription from the asymptotic equipartition property",
+    "date": "2021-06-09",
+    "venue": "XXIV Urbino Summer School on Black Holes and the Information Loss Paradox",
+    "url": "https://www.youtube.com/watch?v=fWzpahRtq1w",
+    "sourceUrl": "https://sites.google.com/view/xxivurbinosummerschool/videos/day-3-lectures",
+    "scheduleUrl": "https://sites.google.com/view/xxivurbinosummerschool/program/day-3",
+    "channel": "Filosofia Urbino",
+    "type": "Recording",
+    "speaker": "Jinzhao Wang",
+    "arxivIds": [
+      "2105.05892"
+    ]
+  },
+  {
+    "title": "Outer entropy equals the Bartnik-Bray inner mass",
+    "date": "2021-02-11",
+    "venue": "Central European Relativity Seminar 11, Vienna",
+    "url": "https://www.youtube.com/watch?v=5bImMO9-FIA",
+    "sourceUrl": "https://cers.univie.ac.at/cers11/schedule.html",
+    "abstractUrl": "https://cers.univie.ac.at/cers11/abstracts.html#JinzhaoWang",
+    "channel": "Central European Relativity Seminars",
+    "type": "Recording",
+    "speaker": "Jinzhao Wang",
+    "arxivIds": [
+      "2007.00030"
+    ]
+  },
+  {
     "title": "Outer entropy equals Bartnik-Bray inner mass, and the gravitational ant conjecture",
     "date": "2020-11-25",
     "venue": "Atlantic General Relativity Seminar",
@@ -229,6 +273,19 @@
     "sourceUrl": "https://projects.ift.uam-csic.es/holotube/600-2/",
     "slidesUrl": "https://projects.ift.uam-csic.es/holotube/wp-content/uploads/2020/10/Holotube_Jinzhao_Wang-2.pdf",
     "type": "Seminar",
+    "speaker": "Jinzhao Wang",
+    "arxivIds": [
+      "2007.00030"
+    ]
+  },
+  {
+    "title": "Outer entropy equals Bartnik-Bray inner mass, and the gravitational ant conjecture",
+    "date": "2020-07-14",
+    "venue": "BCTP String / HEP-QIS Seminar, University of California, Berkeley",
+    "url": "https://www.youtube.com/watch?v=gTwXfzjhdE8",
+    "sourceUrl": "https://www-theory.lbl.gov/?event=jinzhao-wang-eth-zurich-outer-entropy-bartnik-bray-inner-mass-and-the-gravitational-ant-conjecture",
+    "channel": "Bousso Group at Berkeley",
+    "type": "Recording",
     "speaker": "Jinzhao Wang",
     "arxivIds": [
       "2007.00030"
