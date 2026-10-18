@@ -4,11 +4,11 @@
     "date": "2026-09-17",
     "description": "A practical guide to building and tuning a custom diffusion attention kernel on AMD GPUs with FlyDSL, covering flexible KV caches, hardware-aware optimization, profiling, and an LLM-assisted implementation workflow.",
     "tags": [
-      "AI/LLM",
+      "AI",
       "GPU kernels"
     ],
     "researchTopics": [
-      "AI/LLM"
+      "AI"
     ],
     "url": "https://rocm.blogs.amd.com/software-tools-optimization/flydsl-customized-attention/README.html",
     "publication": "AMD ROCm Blogs",

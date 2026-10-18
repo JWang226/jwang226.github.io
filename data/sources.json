@@ -18,8 +18,8 @@
   ],
   "classificationNotes": [
     "Research topics are editorial groupings rather than arXiv categories.",
-    "The 2016 Chinese-character paper is shown under Algorithms & language and has no AI/LLM topic tag, because it is a topological sorting paper rather than an LLM paper.",
-    "No AI/LLM research publications were independently verified; this should not be filled with invented publications.",
+    "The 2016 Chinese-character paper is shown under Algorithms & language and has no AI topic tag, because it is a topological sorting paper rather than an LLM paper.",
+    "No AI research publications were independently verified; this should not be filled with invented publications.",
     "Local gravitational energy in higher dimensions is a short preprint; arXiv:2001.08485 is explicitly described on arXiv as its extended version."
   ],
   "publications": [
@@ -242,7 +242,7 @@
     },
     {
       "url": "https://rocm.blogs.amd.com/software-tools-optimization/flydsl-customized-attention/README.html",
-      "supports": "AMD ROCm Blogs article title, 17 September 2026 publication date, Jinzhao Wang coauthor credit, and FlyDSL custom diffusion-attention kernel subject. Linked as technical writing in AI/LLM and on the blog, without treating it as an academic paper or asserting numerical speedups."
+      "supports": "AMD ROCm Blogs article title, 17 September 2026 publication date, Jinzhao Wang coauthor credit, and FlyDSL custom diffusion-attention kernel subject. Linked as technical writing in AI and on the blog, without treating it as an academic paper or asserting numerical speedups."
     }
   ],
   "cvPresentations": {
