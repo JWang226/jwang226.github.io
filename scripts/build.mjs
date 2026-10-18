@@ -2,10 +2,12 @@ import { readFile, writeFile, mkdir, cp, rm, readdir } from 'node:fs/promises';
 import path from 'node:path';
 import { marked } from 'marked';
 import { createHash } from 'node:crypto';
+import { networkLayers } from '../assets/neural-flow.js';
 
 const json = async (file, fallback) => { try { return JSON.parse(await readFile(file, 'utf8')); } catch (error) { if (error.code === 'ENOENT' && fallback !== undefined) return fallback; throw error; } };
 const site = await json('data/site.json');
 const styleVersion = createHash('sha256').update(await readFile('assets/style.css')).digest('hex').slice(0, 10);
+const networkVersion = createHash('sha256').update(await readFile('assets/neural-flow.js')).digest('hex').slice(0, 10);
 const blochVersion = createHash('sha256').update(await readFile('assets/bloch-drift.js')).digest('hex').slice(0, 10);
 const highlightVersion = createHash('sha256').update(await readFile('assets/cloning-highlight.js')).digest('hex').slice(0, 10);
 const scriptVersion = createHash('sha256').update(await readFile('assets/site.js')).digest('hex').slice(0, 10);
@@ -30,11 +32,18 @@ const descriptions = {
 function visual(topic, large = false) {
   let art = '';
   if (topic === 'AI') {
-    const layers = [[40,[55,100,145]],[110,[35,78,122,165]],[180,[55,100,145]],[250,[78,122]]];
-    let wires = '';
-    for (let i=0;i<layers.length-1;i++) for (const y of layers[i][1]) for (const z of layers[i+1][1]) wires += `<line x1="${layers[i][0]}" y1="${y}" x2="${layers[i+1][0]}" y2="${z}" stroke="#bcb8ad" stroke-width=".8"/>`;
-    art = `<g class="network-wires">${wires}</g><g class="network-signals" stroke="#8b342b" stroke-width="1.7"><path class="network-signal" pathLength="1" d="M40 55L110 78L180 100L250 78"/><path class="network-signal" pathLength="1" d="M40 100L110 122L180 145L250 122"/><path class="network-signal" pathLength="1" d="M40 145L110 165L180 100L250 122"/></g>`;
-    layers.forEach(([x,ys],layer) => ys.forEach((y,index) => { art += `<circle class="network-node" style="--node-delay:${layer*220+index*75}ms" cx="${x}" cy="${y}" r="5" fill="${x === 250 ? '#8b342b' : '#f5f3ec'}" stroke="${x === 250 ? '#8b342b' : '#5b625b'}"/>`; }));
+    let wires = '', cursors = '', nodes = '';
+    networkLayers.slice(0,-1).forEach(([x,ys],layer) => ys.forEach((y,source) => {
+      const [nextX,nextYs] = networkLayers[layer+1];
+      nextYs.forEach((nextY,target) => {
+        wires += `<line x1="${x}" y1="${y}" x2="${nextX}" y2="${nextY}"/>`;
+        cursors += `<circle class="network-cursor" data-layer="${layer}" data-source="${source}" data-target="${target}" cx="${x}" cy="${y}" r="2.5" opacity="0"/>`;
+      });
+    }));
+    networkLayers.forEach(([x,ys],layer) => ys.forEach((y,index) => {
+      nodes += `<circle class="network-node" data-layer="${layer}" data-index="${index}" cx="${x}" cy="${y}" r="5" fill="#f5f3ec" stroke="#5b625b"/>`;
+    }));
+    art = `<g data-neural-network><g class="network-wires">${wires}</g><g class="network-cursors">${cursors}</g><g class="network-nodes">${nodes}</g></g>`;
   } else if (topic === 'Quantum') {
     art = '<circle cx="145" cy="100" r="71"/><ellipse cx="145" cy="100" rx="71" ry="24"/><g class="quantum-meridian"><ellipse cx="145" cy="100" rx="24" ry="71" transform="rotate(32 145 100)"/></g><path d="M145 182V18M55 100h180" stroke-dasharray="3 5" opacity=".55"/><g class="quantum-trace"></g><g class="quantum-state" data-bloch-state><path class="quantum-vector" d="M145 100l41-52" stroke="#8b342b" stroke-width="1.6"/><circle class="quantum-dot" cx="186" cy="48" r="5" fill="#8b342b" stroke="none"/></g><text x="145" y="12" text-anchor="middle">|0⟩</text><text x="145" y="197" text-anchor="middle">|1⟩</text>';
   } else {
@@ -82,7 +91,7 @@ function cloningHighlight() {
 
 function shell(title, current, body, description = site.description, route = '/') {
   const nav = [['Home','/'],['Research','/research/'],['Publications','/publications/'],['Blog','/blog/'],['CV','/cv/']];
-  return `<!doctype html><html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>${esc(title === 'Home' ? site.name + ' — AI, Quantum & Gravity' : title + ' — ' + site.name)}</title><meta name="description" content="${esc(description)}"><meta name="theme-color" content="#f5f3ec"><link rel="canonical" href="${site.url}${route}"><meta property="og:type" content="website"><meta property="og:title" content="${esc(title === 'Home' ? site.name : title + ' — ' + site.name)}"><meta property="og:description" content="${esc(description)}"><meta property="og:url" content="${site.url}${route}"><meta property="og:image" content="${site.url}/assets/social-card.svg"><link rel="icon" href="/assets/favicon.svg" type="image/svg+xml"><link rel="stylesheet" href="/assets/style.css?v=${styleVersion}"><link rel="alternate" type="application/rss+xml" title="Jinzhao Wang — Blog" href="/feed.xml"><script src="/assets/site.js?v=${scriptVersion}" defer></script>${body.includes('data-bloch-state')?`<script type="module" src="/assets/bloch-drift.js?v=${blochVersion}"></script>`:''}</head><body><a class="skip-link" href="#main">Skip to content</a><header class="site-header wrap"><a class="wordmark" href="/" aria-label="Jinzhao Wang home">Jinzhao Wang<span class="wordmark-dot">.</span></a><button class="menu-toggle" aria-label="Toggle navigation" aria-expanded="false" aria-controls="main-nav">Menu <span aria-hidden="true">☰</span></button><nav id="main-nav" aria-label="Main navigation">${nav.map(([name,url])=>`<a href="${url}" ${current===name?'aria-current="page"':''}>${name}</a>`).join('')}</nav></header><main id="main">${body}</main><footer class="site-footer wrap"><div><a class="footer-name" href="/">Jinzhao Wang<span>.</span></a><p>AI · Quantum · Information · Gravity</p></div><div class="footer-links">${link('Google Scholar',site.scholar)}${link('GitHub',site.github)}${link('LinkedIn',site.linkedin)}${link('X',site.x)}${link('ORCID',site.orcid)}</div><p class="copyright">© ${new Date().getUTCFullYear()} Jinzhao Wang</p></footer></body></html>`;
+  return `<!doctype html><html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>${esc(title === 'Home' ? site.name + ' — AI, Quantum & Gravity' : title + ' — ' + site.name)}</title><meta name="description" content="${esc(description)}"><meta name="theme-color" content="#f5f3ec"><link rel="canonical" href="${site.url}${route}"><meta property="og:type" content="website"><meta property="og:title" content="${esc(title === 'Home' ? site.name : title + ' — ' + site.name)}"><meta property="og:description" content="${esc(description)}"><meta property="og:url" content="${site.url}${route}"><meta property="og:image" content="${site.url}/assets/social-card.svg"><link rel="icon" href="/assets/favicon.svg" type="image/svg+xml"><link rel="stylesheet" href="/assets/style.css?v=${styleVersion}"><link rel="alternate" type="application/rss+xml" title="Jinzhao Wang — Blog" href="/feed.xml"><script src="/assets/site.js?v=${scriptVersion}" defer></script>${body.includes('data-neural-network')?`<script type="module" src="/assets/neural-flow.js?v=${networkVersion}"></script>`:''}${body.includes('data-bloch-state')?`<script type="module" src="/assets/bloch-drift.js?v=${blochVersion}"></script>`:''}</head><body><a class="skip-link" href="#main">Skip to content</a><header class="site-header wrap"><a class="wordmark" href="/" aria-label="Jinzhao Wang home">Jinzhao Wang<span class="wordmark-dot">.</span></a><button class="menu-toggle" aria-label="Toggle navigation" aria-expanded="false" aria-controls="main-nav">Menu <span aria-hidden="true">☰</span></button><nav id="main-nav" aria-label="Main navigation">${nav.map(([name,url])=>`<a href="${url}" ${current===name?'aria-current="page"':''}>${name}</a>`).join('')}</nav></header><main id="main">${body}</main><footer class="site-footer wrap"><div><a class="footer-name" href="/">Jinzhao Wang<span>.</span></a><p>AI · Quantum · Information · Gravity</p></div><div class="footer-links">${link('Google Scholar',site.scholar)}${link('GitHub',site.github)}${link('LinkedIn',site.linkedin)}${link('X',site.x)}${link('ORCID',site.orcid)}</div><p class="copyright">© ${new Date().getUTCFullYear()} Jinzhao Wang</p></footer></body></html>`;
 }
 
 function paperLinks(p) {
