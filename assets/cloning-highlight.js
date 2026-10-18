@@ -1,17 +1,10 @@
-// Playback controls for the homepage's schematic quantum-cloning highlight.
+// Autoplay the homepage highlight while visible, respecting reduced motion.
 const motion = window.matchMedia('(prefers-reduced-motion:reduce)');
 document.querySelectorAll('[data-cloning-highlight]').forEach(figure => {
-  const control = figure.querySelector('[data-cloning-toggle]');
-  const label = figure.querySelector('[data-cloning-label]');
-  let playing = true, visible = true;
+  let visible = true;
   function sync() {
-    figure.classList.toggle('is-playing', playing && visible && !document.hidden && !motion.matches);
-    control.disabled = motion.matches;
-    control.dataset.playing = String(playing && !motion.matches);
-    label.textContent = motion.matches ? 'Motion paused' : playing ? 'Pause animation' : 'Play animation';
-    control.setAttribute('aria-label', motion.matches ? 'Motion paused: quantum cloning machine' : `${label.textContent} of the quantum cloning machine`);
+    figure.classList.toggle('is-playing', visible && !document.hidden && !motion.matches);
   }
-  control.addEventListener('click', () => { playing = !playing; sync(); });
   motion.addEventListener('change', sync);
   document.addEventListener('visibilitychange', sync);
   new IntersectionObserver(entries => { visible = entries[0].isIntersecting; sync(); }, {threshold:.05}).observe(figure);

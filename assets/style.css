@@ -29,7 +29,7 @@
 /* A schematic cloning machine introduces the featured research paper. */
 .research-spotlight{align-self:center;min-width:0;width:100%;margin:0;padding-top:20px}
 .research-spotlight>.eyebrow{color:var(--muted);padding-bottom:12px;border-bottom:1px solid var(--rule)}
-.cloning-toggle{display:block;position:relative;width:100%;padding:10px 0 34px;border:0;background:transparent;color:var(--muted);border-radius:5px;touch-action:manipulation}
+.cloning-diagram{display:block;width:100%;padding:10px 0 8px}
 .cloning-machine{display:block;width:100%;height:auto;overflow:visible}
 .cloning-legend{display:grid;grid-template-columns:1fr 1.25fr 1fr;gap:6px;align-items:start;text-align:center;font:var(--entry-link)/1.4 var(--sans);color:var(--muted);padding:8px 0 12px}
 .cloning-legend small{display:block;font-size:var(--entry-meta);line-height:1.5;margin-top:3px}
@@ -45,11 +45,6 @@
 .clone-state-vector{stroke:var(--accent);stroke-width:1.5}
 .clone-state-tip{fill:var(--accent);stroke:none}
 .clone-output{opacity:.65}
-.cloning-control{position:absolute;bottom:0;left:50%;transform:translateX(-50%);display:flex;align-items:center;justify-content:center;min-height:44px;font:var(--entry-meta) var(--sans);white-space:nowrap;color:var(--muted)}
-.cloning-control:before{content:"Ⅱ";font-size:14px;margin-right:8px;color:var(--accent)}
-.cloning-toggle[data-playing=false] .cloning-control:before{content:"▶";font-size:11px}
-.cloning-toggle:disabled{cursor:default}
-.cloning-toggle:disabled .cloning-control:before{content:"";margin:0}
 .research-spotlight figcaption{padding-top:18px;border-top:1px solid var(--rule);margin-top:12px}
 .research-spotlight h2{font:var(--entry-title)/1.12 var(--serif);letter-spacing:-.025em}
 .research-spotlight h2 a{display:block;min-height:44px}
