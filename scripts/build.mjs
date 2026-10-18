@@ -61,7 +61,13 @@ function paperLinks(p) {
   const all = [];
   if (p.arxiv) all.push({label:'arXiv',url:p.arxiv});
   if (p.journal?.url) all.push({label:'Journal',url:p.journal.url});
-  all.push(...(p.links || []));
+  for (const resource of p.links || []) {
+    const talk = talkByUrl.get(resource.url);
+    if (talk && talk.speaker !== site.name) {
+      if (talk.type !== 'Recording' || !talk.speaker) continue;
+      all.push({...resource,label:`Coauthor talk · ${talk.speaker}`});
+    } else all.push(resource);
+  }
   return `<div class="paper-links">${[...new Map(all.map(l=>[l.url,l])).values()].map(l=>link(l.label,l.url)).join('')}</div>`;
 }
 function paper(p, compact = false) {

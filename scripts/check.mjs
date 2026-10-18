@@ -39,6 +39,7 @@ const cv=htmlByFile.get(path.join(root,'cv/index.html'));
 assert(!/tel:|mailto:|Take-Home|residency interview|References</i.test(cv),'Private CV details must not be published');
 const presentations=JSON.parse(await readFile('data/presentations.json','utf8'));
 const talks=JSON.parse(await readFile('data/talks.json','utf8'));
+const site=JSON.parse(await readFile('data/site.json','utf8'));
 const talkUrls=new Set(talks.map(t=>t.url));
 assert(new Set(presentations.map(p=>p.id)).size===presentations.length,'Presentation IDs must be unique');
 assert([...cv.matchAll(/class="cv-talk-entry"/g)].length===presentations.length,'The full presentation list must appear on the CV');
@@ -49,12 +50,23 @@ assert(expandedYears.length===1 && Number(expandedYears[0][1])===Math.max(...pre
 for(const p of presentations) {
   assert(p.event && p.kind && Number.isInteger(p.year) && Number.isInteger(p.month) && p.month>=1 && p.month<=12,`Invalid presentation: ${p.id}`);
   if(p.talkUrl) assert(talkUrls.has(p.talkUrl),`Missing verified talk resource: ${p.id}`);
-  if(p.presenter) assert(cv.includes(`Presented by ${p.presenter}`),`Missing presenter credit: ${p.id}`);
+  if(p.presenter) {
+    assert(cv.includes(`Presented by ${p.presenter}`),`Missing presenter credit: ${p.id}`);
+    if(p.presenter!==site.name) assert(talks.some(t=>t.url===p.talkUrl && t.type==='Recording' && t.speaker===p.presenter),`Coauthor CV presentation needs a verified recording: ${p.id}`);
+  }
 }
-for(const t of talks) for(const id of t.arxivIds || []) {
-  const p=papers.find(p=>p.id===id);
-  assert(p,`Talk references an unknown paper: ${id}`);
-  if(t.type==='Recording') assert(p.links.some(l=>l.url===t.url),`Recording missing from relevant paper: ${id}`);
+for(const t of talks) {
+  assert(t.speaker,`Talk must identify its speaker: ${t.url}`);
+  if(t.speaker!==site.name) assert(t.type==='Recording',`Coauthor talks need recordings: ${t.url}`);
+  for(const id of t.arxivIds || []) {
+    const p=papers.find(p=>p.id===id);
+    assert(p,`Talk references an unknown paper: ${id}`);
+    if(t.type==='Recording') assert(p.links.some(l=>l.url===t.url),`Recording missing from relevant paper: ${id}`);
+    if(t.speaker!==site.name) {
+      assert(p.authors.includes(t.speaker),`Coauthor speaker must be a paper author: ${id}`);
+      assert(p.links.some(l=>l.url===t.url && l.label.includes(t.speaker) && /coauthor/i.test(l.label)),`Coauthor recording must be clearly labelled: ${id}`);
+    }
+  }
 }
 if(errors.length) {console.error(errors.join('\n'));process.exit(1);}
 console.log(`Verified ${htmlFiles.length} HTML pages, all local links and anchors, ${papers.length} publication records, ${presentations.length} CV presentations, and recording-to-paper links.`);

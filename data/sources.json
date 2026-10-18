@@ -57,8 +57,6 @@
       "sources": [
         "https://arxiv.org/abs/2509.13406",
         "https://doi.org/10.1103/wt7l-6385",
-        "https://qipconference.org/2026/sessions/many_body_theory_4/",
-        "https://indico.global/event/16432/contributions/156308/",
         "https://pirsa.org/25060012",
         "https://www.caltech.edu/campus-life-events/calendar/high-energy-theory-seminar-810"
       ]
@@ -73,7 +71,8 @@
       "id": "2412.19885",
       "sources": [
         "https://arxiv.org/abs/2412.19885",
-        "https://doi.org/10.21468/SciPostPhys.19.4.095"
+        "https://doi.org/10.21468/SciPostPhys.19.4.095",
+        "https://www.youtube.com/watch?v=uo8OmGoz8VY"
       ]
     },
     {
@@ -137,7 +136,9 @@
         "https://vimeo.com/686587406",
         "https://www.oist.jp/research/research-units/quast/recorded-group-seminars",
         "https://indico.global/event/408/",
-        "https://indico.global/event/408/attachments/612/1150/Loops%2722%20Jinzhao.pdf"
+        "https://indico.global/event/408/attachments/612/1150/Loops%2722%20Jinzhao.pdf",
+        "https://www.youtube.com/watch?v=TqgA9YtIGAY",
+        "https://www.ggi.infn.it/single-workshop.php?id=428"
       ]
     },
     {
@@ -234,14 +235,15 @@
   ],
   "cvPresentations": {
     "source": "Owner-provided updated CV text, received 2026-10-17",
-    "entries": 62,
+    "entries": 61,
     "notes": [
       "The full 2018–2025 list includes invited and contributed talks, seminars, oral presentations and posters.",
-      "The Virtual Causet Conference 2020 entry explicitly credits Ludovico Machet as the presenter.",
       "The GGI talk is listed in July 2022, correcting the June date in the CV using the official programme: 1 July 2022, 11:30–12:30.",
       "The GeoFlow March 2023 recording is linked on the CV, without assigning it to a paper because its publication mapping could not be confirmed.",
-      "Research, supervision and teaching sections remain omitted at the owner’s earlier request. Private contact information and referee details are not published."
-    ]
+      "Research, supervision and teaching sections remain omitted at the owner’s earlier request. Private contact information and referee details are not published.",
+      "The source CV includes a Virtual Causet Conference 2020 presentation delivered by Ludovico Machet. It is omitted from the public CV under the owner’s recording-only rule for coauthor talks because no public recording was verified."
+    ],
+    "sourceEntries": 62
   },
   "youtubeRecordingReview": {
     "checkedOn": "2026-10-17",
@@ -257,6 +259,41 @@
       "The IAS YouTube result K0ivzrqsGXE is the same December 2023 Bekenstein talk already linked through the official IAS video page, so it is not duplicated.",
       "Excluded videos by similarly named researchers and workshop talks where Jinzhao Wang appears only as an organizer.",
       "Purdue month follows the CV; its YouTube upload date is recorded separately from the unverified exact event day."
+    ]
+  },
+  "coauthorTalkPolicy": {
+    "updatedOn": "2026-10-17",
+    "instruction": "Only include coauthor talks when a recording is available, and explicitly identify the coauthor speaker.",
+    "removedLinks": [
+      "Contours 2026, at the owner’s request",
+      "QIP 2026, because only an author-list conference entry and no recording or confirmed presenter was verified"
+    ],
+    "addedRecordings": [
+      {
+        "url": "https://www.youtube.com/watch?v=uo8OmGoz8VY",
+        "speaker": "Shreya Vardhan",
+        "arxivIds": [
+          "2412.19885"
+        ]
+      },
+      {
+        "url": "https://www.youtube.com/watch?v=TqgA9YtIGAY",
+        "speaker": "Renato Renner",
+        "arxivIds": [
+          "2110.14653"
+        ]
+      }
+    ],
+    "omittedCVPresentations": [
+      {
+        "id": "2020-causet",
+        "year": 2020,
+        "month": 8,
+        "event": "Virtual Causet Conference 2020",
+        "venue": "",
+        "kind": "Oral presentation",
+        "presenter": "Ludovico Machet"
+      }
     ]
   }
 }

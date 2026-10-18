@@ -1,20 +1,5 @@
 [
   {
-    "title": "Free mutual information and ergodicity in operator space",
-    "date": "2026-01-30",
-    "venue": "QIP 2026",
-    "url": "https://qipconference.org/2026/sessions/many_body_theory_4/",
-    "type": "Conference",
-    "authors": [
-      "Shreya Vardhan",
-      "Jinzhao Wang"
-    ],
-    "arxivIds": [
-      "2509.13406"
-    ],
-    "paperTitle": "Free mutual information and higher-point OTOCs"
-  },
-  {
     "title": "Free mutual information and higher-point OTOCs",
     "date": "2025-11-05",
     "venue": "High Energy Theory Seminar, Caltech",
@@ -74,6 +59,20 @@
       "2405.13886"
     ],
     "paperTitle": "Quantum Energy Teleportation versus Information Teleportation"
+  },
+  {
+    "title": "Estimating time in quantum chaotic systems and black holes",
+    "date": "2024-11-18",
+    "uploadedOn": "2024-12-17",
+    "venue": "Black Hole Initiative Colloquium, Harvard University",
+    "url": "https://www.youtube.com/watch?v=uo8OmGoz8VY",
+    "channel": "Black Hole Initiative",
+    "type": "Recording",
+    "speaker": "Shreya Vardhan",
+    "arxivIds": [
+      "2412.19885"
+    ],
+    "mappingNote": "Speaker and event date are stated in the official video title; the description gives the exact paper title. This is a coauthor recording, not a presentation by Jinzhao Wang."
   },
   {
     "title": "Quantum Energy Teleportation versus Information Teleportation",
@@ -174,6 +173,21 @@
     "arxivIds": [
       "2110.14653"
     ]
+  },
+  {
+    "title": "What the quantum de Finetti theorem tells us about black holes",
+    "date": "2022-07-11",
+    "uploadedOn": "2022-07-14",
+    "venue": "Reconstructing the Gravitational Hologram with Quantum Information, Galileo Galilei Institute",
+    "url": "https://www.youtube.com/watch?v=TqgA9YtIGAY",
+    "sourceUrl": "https://www.ggi.infn.it/single-workshop.php?id=428",
+    "channel": "Galileo Galilei Institute (GGI)",
+    "type": "Recording",
+    "speaker": "Renato Renner",
+    "arxivIds": [
+      "2110.14653"
+    ],
+    "mappingNote": "The official GGI programme links this exact video from Renato Renner’s 11 July 2022 talk. This is a coauthor recording, not a presentation by Jinzhao Wang."
   },
   {
     "title": "Beyond islands: a free probabilistic approach",
