@@ -50,6 +50,7 @@ assert(expandedYears.length===1 && Number(expandedYears[0][1])===Math.max(...pre
 for(const p of presentations) {
   assert(p.event && p.kind && Number.isInteger(p.year) && Number.isInteger(p.month) && p.month>=1 && p.month<=12,`Invalid presentation: ${p.id}`);
   if(p.talkUrl) assert(talkUrls.has(p.talkUrl),`Missing verified talk resource: ${p.id}`);
+  if(p.eventUrl) assert(new URL(p.eventUrl).protocol==='https:',`Use HTTPS for event: ${p.id}`);
   if(p.presenter) {
     assert(cv.includes(`Presented by ${p.presenter}`),`Missing presenter credit: ${p.id}`);
     if(p.presenter!==site.name) assert(talks.some(t=>t.url===p.talkUrl && t.type==='Recording' && t.speaker===p.presenter),`Coauthor CV presentation needs a verified recording: ${p.id}`);

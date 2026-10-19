@@ -254,13 +254,14 @@
   ],
   "cvPresentations": {
     "source": "Owner-provided updated CV text, received 2026-10-17",
-    "entries": 61,
+    "entries": 62,
     "notes": [
       "The full 2018–2025 list includes invited and contributed talks, seminars, oral presentations and posters.",
       "The GGI talk is listed in July 2022, correcting the June date in the CV using the official programme: 1 July 2022, 11:30–12:30.",
       "The GeoFlow March 2023 recording is linked on the CV, without assigning it to a paper because its publication mapping could not be confirmed.",
       "Research, supervision and teaching sections remain omitted at the owner’s earlier request. Private contact information and referee details are not published.",
-      "The source CV includes a Virtual Causet Conference 2020 presentation delivered by Ludovico Machet. It is omitted from the public CV under the owner’s recording-only rule for coauthor talks because no public recording was verified."
+      "The source CV includes a Virtual Causet Conference 2020 presentation delivered by Ludovico Machet. It is omitted from the public CV under the owner’s recording-only rule for coauthor talks because no public recording was verified.",
+      "The owner requested removal of the Service section and inclusion of the Thermalization and Quantum Information Workshop under Talks & presentations as Organizer. Its October 23–25, 2024 date was verified on the Stanford Q-FARM page and the owner confirmed placement under 2024."
     ],
     "sourceEntries": 62
   },
@@ -314,5 +315,15 @@
         "presenter": "Ludovico Machet"
       }
     ]
-  }
+  },
+  "cvOrganizerEvents": [
+    {
+      "event": "Thermalization and Quantum Information Workshop",
+      "role": "Organizer",
+      "date": "2024-10-23",
+      "endDate": "2024-10-25",
+      "source": "https://qfarm.stanford.edu/events/conference-workshop/thermalization-and-quantum-information-workshop",
+      "verifiedOn": "2026-10-18"
+    }
+  ]
 }

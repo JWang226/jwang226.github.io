@@ -77,6 +77,15 @@
     "talkUrl": "https://www.youtube.com/watch?v=b14vcqFHVcU"
   },
   {
+    "id": "2024-thermalization-organizer",
+    "year": 2024,
+    "month": 10,
+    "event": "Thermalization and Quantum Information Workshop",
+    "venue": "Q-FARM, Stanford University",
+    "kind": "Organizer",
+    "eventUrl": "https://qfarm.stanford.edu/events/conference-workshop/thermalization-and-quantum-information-workshop"
+  },
+  {
     "id": "2024-10",
     "year": 2024,
     "month": 7,
