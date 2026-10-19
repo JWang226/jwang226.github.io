@@ -316,10 +316,6 @@
     "summary": "Uses free probability to compute black hole radiation entropy beyond the regimes captured by the island formula, connecting gravitational replicas with random matrices.",
     "links": [
       {
-        "label": "GGI workshop",
-        "url": "https://www.ggi.infn.it/single-workshop.php?id=367"
-      },
-      {
         "label": "Talk recording",
         "url": "https://www.youtube.com/watch?v=hEerpPZ5tcg"
       }
@@ -349,10 +345,6 @@
       {
         "label": "Strings & Fields 2021",
         "url": "https://www2.yukawa.kyoto-u.ac.jp/~soken.editorial/sokendenshi/vol37/1/2021/program-soryushiron-kenkyu.html"
-      },
-      {
-        "label": "Slides",
-        "url": "https://www2.yukawa.kyoto-u.ac.jp/~qft.web/2021/slides/wang-jinzhao.pdf"
       },
       {
         "label": "Urbino recording",
@@ -539,12 +531,7 @@
     "journal": null,
     "status": "Preprint",
     "summary": "Studies the local content of gravitational energy through higher-dimensional quasilocal masses and identifies a common vacuum quantity in their small-sphere limits.",
-    "links": [
-      {
-        "label": "Extended paper",
-        "url": "https://arxiv.org/abs/2001.08485"
-      }
-    ],
+    "links": [],
     "featured": false
   },
   {
