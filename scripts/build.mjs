@@ -77,7 +77,7 @@ function visual(topic, large = false) {
     const edge = [Math.atan(.22),Math.atan(.22)+Math.PI].map(angle=>`<path d="${meridian(angle,3)}"/>`).join('');
     art = `<path class="gravity-sheet" d="M13 15.16H229L277 64.84H61Z"/><g class="gravity-meridians">${meridians}</g><g class="gravity-contours">${rings}</g><g class="gravity-silhouette">${edge}</g><path class="gravity-throat-halo" d="${ring(1)}"/><path class="gravity-throat" d="${ring(1)}"/>${pairs}`;
   }
-  return `<button type="button" class="research-visual animation-toggle ${large?'large':''}" aria-label="Animate ${esc(topic)} illustration" aria-pressed="false"><svg class="research-art" viewBox="0 0 290 205" aria-hidden="true" fill="none" stroke="#777d70" stroke-width=".85"><g>${art}</g></svg></button>`;
+  return `<div class="research-visual animation-toggle ${large?'large':''}" data-illustration-name="${esc(topic)}" role="img" aria-label="${esc(topic)} illustration"><svg class="research-art" viewBox="0 0 290 205" aria-hidden="true" fill="none" stroke="#777d70" stroke-width=".85"><g>${art}</g></svg></div>`;
 }
 
 function cloningHighlight() {

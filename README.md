@@ -59,3 +59,5 @@ Use an ISO date (`YYYY-MM-DD`), a unique filename with lowercase letters and hyp
 The workflow installs the locked dependencies, builds into `dist/`, checks the output, uploads it with GitHub's official `upload-pages-artifact` action, and publishes with `deploy-pages`. Its deployment job uses the `github-pages` environment and the required Pages and identity-token permissions. No personal access token or separate hosting service is needed.
 
 For deployment settings and troubleshooting, see GitHub's [custom Pages workflows documentation](https://docs.github.com/en/pages/getting-started-with-github-pages/using-custom-workflows-with-github-pages) and [user-site setup instructions](https://docs.github.com/en/pages/getting-started-with-github-pages/creating-a-github-pages-site). The primary custom domain is `wangjinzhao.com`; configure it in the repository's Pages settings and keep `data/site.json` in sync if it changes.
+
+Research illustrations autoplay while visible on phones and touch devices, with no animation buttons. Desktop illustrations support hover, click, and keyboard activation. System reduced-motion preferences and hidden-page pauses are respected.

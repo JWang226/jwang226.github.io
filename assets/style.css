@@ -72,10 +72,9 @@
 .research-card-link:after{content:"";position:absolute;inset:0;z-index:1}
 .research-visual.animation-toggle{position:relative;z-index:2;padding:0;border:0;background:transparent;color:inherit;border-radius:3px}
 .research-art{display:block;width:100%;height:100%}
-@media(hover:none),(pointer:coarse){
-  .animation-toggle:not(:disabled):after{content:"Animate";position:absolute;right:0;bottom:0;font:var(--entry-meta)/1.5 var(--sans);color:var(--accent);background:var(--paper);padding:2px 5px;border:1px solid var(--rule);border-radius:3px}
-  .animation-toggle[aria-pressed=true]:after{content:"Pause"}
-}
+.animation-toggle[role=button]{cursor:pointer}
+.animation-toggle[role=button]:focus-visible{outline:2px solid var(--accent);outline-offset:5px}
+.animation-toggle[role=img]{cursor:default;pointer-events:none}
 @media(prefers-reduced-motion:no-preference){
   .research-visual.is-animating .hawking-particle{animation:hawking-travel 6s linear infinite;animation-delay:var(--pair-delay,0s)}
   .research-visual.is-animating .hawking-birth{animation:hawking-birth 6s ease-out infinite;animation-delay:var(--pair-delay,0s)}

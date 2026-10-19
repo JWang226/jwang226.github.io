@@ -77,29 +77,54 @@ window.addEventListener('afterprint', () => {
   presentationPrintState = undefined;
 });
 
-// Real buttons make tap-to-toggle independent of the homepage research links.
-const illustrationButtons = [...document.querySelectorAll('.animation-toggle')];
+// Phone illustrations play automatically; desktop keeps hover and keyboard controls.
+const illustrations = [...document.querySelectorAll('.animation-toggle')];
 const reducedMotion = window.matchMedia('(prefers-reduced-motion:reduce)');
-function stopIllustrations() {
-  illustrationButtons.forEach(button => {
-    button.classList.remove('is-animating');
-    button.setAttribute('aria-pressed', 'false');
+const mobileMotion = window.matchMedia('(max-width:760px), (max-width:950px) and (max-height:500px), (hover:none), (pointer:coarse)');
+const illustrationVisibility = new WeakMap();
+let selectedIllustration = null;
+function syncIllustrationMotion() {
+  const interactive = !mobileMotion.matches && !reducedMotion.matches;
+  illustrations.forEach(illustration => {
+    illustration.setAttribute('role',interactive?'button':'img');
+    illustration.setAttribute('aria-label',`${interactive?'Animate ':''}${illustration.dataset.illustrationName} illustration`);
+    if (interactive) {
+      illustration.setAttribute('tabindex','0');
+      illustration.setAttribute('aria-pressed',String(selectedIllustration===illustration));
+    } else {
+      illustration.removeAttribute('tabindex');
+      illustration.removeAttribute('aria-pressed');
+    }
+    const playing = !reducedMotion.matches && !document.hidden &&
+      (mobileMotion.matches?illustrationVisibility.get(illustration)===true:selectedIllustration===illustration);
+    illustration.classList.toggle('is-animating',playing);
   });
 }
-function syncIllustrationMotion() {
-  stopIllustrations();
-  illustrationButtons.forEach(button => { button.disabled = reducedMotion.matches; });
+illustrations.forEach(illustration => {
+  illustration.addEventListener('click',() => {
+    if (mobileMotion.matches || reducedMotion.matches) return;
+    selectedIllustration = selectedIllustration===illustration?null:illustration;
+    syncIllustrationMotion();
+  });
+  illustration.addEventListener('keydown',event => {
+    if (mobileMotion.matches || reducedMotion.matches || event.repeat || !['Enter',' '].includes(event.key)) return;
+    event.preventDefault();
+    illustration.click();
+  });
+});
+const illustrationObserver = new IntersectionObserver(entries => {
+  entries.forEach(entry => illustrationVisibility.set(entry.target,entry.isIntersecting));
+  syncIllustrationMotion();
+},{threshold:.05});
+illustrations.forEach(illustration => illustrationObserver.observe(illustration));
+function resetIllustrationMotion() {
+  selectedIllustration = null;
+  syncIllustrationMotion();
 }
-illustrationButtons.forEach(button => button.addEventListener('click', () => {
-  const play = button.getAttribute('aria-pressed') !== 'true';
-  stopIllustrations();
-  if (play && !reducedMotion.matches) {
-    button.classList.add('is-animating');
-    button.setAttribute('aria-pressed', 'true');
-  }
-}));
-reducedMotion.addEventListener('change', syncIllustrationMotion);
-document.addEventListener('visibilitychange', () => {
-  if (document.hidden) stopIllustrations();
+reducedMotion.addEventListener('change',resetIllustrationMotion);
+mobileMotion.addEventListener('change',resetIllustrationMotion);
+document.addEventListener('visibilitychange',() => {
+  if (document.hidden) selectedIllustration = null;
+  syncIllustrationMotion();
 });
 syncIllustrationMotion();
