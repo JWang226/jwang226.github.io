@@ -186,6 +186,7 @@
 .content-page .article-heading h1,.content-page .cv-top h1{font-size:var(--page-title)}
 .content-page .year-group>h2{font-size:var(--entry-title)}
 .content-page .page-heading h1{letter-spacing:-.025em}
+.home-page .hero h1,.content-page .cv-top h1{font-size:clamp(32px,3vw,40px);letter-spacing:-.025em}
 }
 @media screen and (max-width:1050px){.content-page{--page-title:48px}}
 @media screen and (max-width:520px){.content-page{--page-title:42px}}
