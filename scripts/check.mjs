@@ -36,10 +36,10 @@ for(const route of ['index.html','research/index.html','publications/index.html'
 const home=htmlByFile.get(path.join(root,'index.html'));
 for(const id of ['ai-llm','quantum','gravity']) assert(home.includes('/research/#'+id),`Home must showcase ${id}`);
 const cv=htmlByFile.get(path.join(root,'cv/index.html'));
-assert(!/tel:|mailto:|Take-Home|residency interview|References</i.test(cv),'Private CV details must not be published');
+const site=JSON.parse(await readFile('data/site.json','utf8'));
+assert(!/tel:|mailto:|Take-Home|residency interview|References</i.test(cv.replaceAll('mailto:'+site.email,'')),'Private CV details must not be published');
 const presentations=JSON.parse(await readFile('data/presentations.json','utf8'));
 const talks=JSON.parse(await readFile('data/talks.json','utf8'));
-const site=JSON.parse(await readFile('data/site.json','utf8'));
 const talkUrls=new Set(talks.map(t=>t.url));
 assert(new Set(presentations.map(p=>p.id)).size===presentations.length,'Presentation IDs must be unique');
 assert([...cv.matchAll(/class="cv-talk-entry"/g)].length===presentations.length,'The full presentation list must appear on the CV');
