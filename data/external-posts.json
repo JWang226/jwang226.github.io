@@ -2,7 +2,7 @@
   {
     "title": "Implementing a High-Performance Custom Diffusion Attention Kernel with FlyDSL",
     "date": "2026-09-17",
-    "description": "A practical guide to building and tuning a custom diffusion attention kernel on AMD GPUs with FlyDSL, covering flexible KV caches, hardware-aware optimization, profiling, and an LLM-assisted implementation workflow.",
+    "description": "How to build, profile, and tune a diffusion attention kernel on AMD GPUs with FlyDSL.",
     "tags": [
       "AI",
       "GPU kernels"
@@ -28,7 +28,7 @@
   {
     "title": "Black hole, replica trick, de Finetti and free probability",
     "date": "2022-10-11",
-    "description": "A guest post on the connections between black hole information, the quantum de Finetti theorem, and free probability.",
+    "description": "The black hole information problem through the lens of the quantum de Finetti theorem and free probability.",
     "tags": [
       "Gravity",
       "Quantum"
