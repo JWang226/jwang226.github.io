@@ -34,7 +34,7 @@ function visual(topic) {
       });
     }));
     networkLayers.forEach(([x,ys],layer) => ys.forEach((y,index) => {
-      nodes += `<circle class="network-node" data-layer="${layer}" data-index="${index}" cx="${x}" cy="${y}" r="5" fill="#242320" stroke="#999484"/>`;
+      nodes += `<circle class="network-node" data-layer="${layer}" data-index="${index}" cx="${x}" cy="${y}" r="5"/>`;
     }));
     art = `<g data-neural-network><g class="network-wires">${wires}</g><g class="network-cursors">${cursors}</g><g class="network-nodes">${nodes}</g></g>`;
   } else if (topic === 'Quantum') {
@@ -89,6 +89,11 @@ function shell(title, current, body, description = site.description, route = '/'
   <title>${esc(pageTitle)}</title>
   <meta name="description" content="${esc(description)}">
   <meta name="theme-color" content="#242320">
+  <script>
+    try {
+      if (localStorage.getItem('site-theme') === 'light') document.documentElement.dataset.theme = 'light';
+    } catch {}
+  </script>
   <link rel="canonical" href="${esc(canonical)}">
   <meta property="og:type" content="website">
   <meta property="og:title" content="${esc(current === 'Home' ? site.name : pageTitle)}">
@@ -107,6 +112,15 @@ function shell(title, current, body, description = site.description, route = '/'
       <nav aria-label="Main navigation">
         <ul>${nav.map(([name,url])=>`<li><a href="${url}"${current===name?' aria-current="page"':''}>${name}</a></li>`).join('')}</ul>
       </nav>
+      <button class="theme-toggle" type="button" data-theme-toggle aria-label="Switch to light mode" hidden>
+        <svg class="theme-icon theme-icon-sun" viewBox="0 0 24 24" aria-hidden="true" focusable="false">
+          <circle cx="12" cy="12" r="4"/><path d="M12 2v2m0 16v2M2 12h2m16 0h2M5 5l1.5 1.5m11 11L19 19M5 19l1.5-1.5m11-11L19 5"/>
+        </svg>
+        <svg class="theme-icon theme-icon-moon" viewBox="0 0 24 24" aria-hidden="true" focusable="false">
+          <path d="M21 12.8A9 9 0 1 1 11.2 3a7 7 0 0 0 9.8 9.8Z"/>
+        </svg>
+        <span class="theme-toggle-label">Light</span>
+      </button>
     </header>
     <main id="main">${body}</main>
     <footer class="site-footer">

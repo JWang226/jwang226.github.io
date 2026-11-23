@@ -54,7 +54,6 @@ function mountNetwork(network) {
   const reducedMotion = window.matchMedia('(prefers-reduced-motion:reduce)');
   const finePointer = window.matchMedia('(hover:hover) and (pointer:fine)');
   let visible = true, frame = null, previousTime = null, elapsed = 0;
-  const blend = (from,to,amount) => `rgb(${from.map((value,i) => Math.round(value+(to[i]-value)*amount)).join(' ')})`;
   function active() {
     return visible && !document.hidden && !reducedMotion.matches &&
       (button.classList.contains('is-animating') || (finePointer.matches &&
@@ -63,9 +62,8 @@ function mountNetwork(network) {
   function draw() {
     const state = networkFrame(elapsed);
     for (const {element,layer,index} of nodes) {
-      const value = state.activations[layer][index], intensity = clamp(value);
-      element.setAttribute('fill',blend([36,35,32],[239,163,145],intensity));
-      element.setAttribute('stroke',blend([153,148,132],[239,163,145],intensity));
+      const value = state.activations[layer][index];
+      element.style.setProperty('--activation', `${clamp(value)*100}%`);
       element.dataset.activation = value.toFixed(4);
     }
     for (const {element,layer,source,weight,x1,y1,x2,y2} of cursors) {
