@@ -78,7 +78,7 @@ function shell(title, current, body, description = site.description, route = '/'
   const profiles = [['Google Scholar',site.scholar],['arXiv',site.arxiv],['GitHub',site.github],['LinkedIn',site.linkedin],['X',site.x],['Email','mailto:'+site.email]];
   const pageTitle = current === 'Home' ? `${site.name} — AI, Quantum & Gravity` : `${title} — ${site.name}`;
   const canonical = `${site.url}${route}`;
-  const researchScripts = current === 'Home' ? `
+  const researchScripts = current === 'Home' || current === 'Research' ? `
     <script type="module" src="/assets/neural-flow.js?v=${networkVersion}"></script>
     <script type="module" src="/assets/bloch-drift.js?v=${blochVersion}"></script>` : '';
   return `<!doctype html>
@@ -191,7 +191,33 @@ function researchWriting(topic) {
   if (!writing.length) return '';
   return `<h3 class="eyebrow related-heading">Selected writing</h3><div class="related-writing">${writing.map(p=>`<article class="research-writing"><p class="research-writing-meta">${esc(p.publication)} · ${esc(dateLabel(p.date))}</p><h4>${link(p.title,p.url)}</h4><p class="research-writing-credit">${esc(p.kind||'Article')}</p><p class="research-writing-summary">${esc(p.description)}</p>${link('Read on '+p.publication,p.url,'text-link')}</article>`).join('')}</div>`;
 }
-const research = `<div class="wrap">${pageHeading('Research')}<nav class="section-index" aria-label="Research areas">${topics.map(t=>`<a href="#${ids[t]}">${esc(t)}</a>`).join('')}</nav>${topics.map(t=>{const {summary,tags}=researchCopy[t];const selected=highlightedPublications(t);const writing=researchWriting(t);return `<section class="research-detail" id="${ids[t]}"><div class="research-detail-heading"><h2>${esc(t)}</h2></div><div class="research-detail-copy"><p>${esc(summary)}</p><div class="topic-tags">${tags.map(x=>`<span>${esc(x)}</span>`).join('')}</div>${selected.length?`<h3 class="eyebrow related-heading">Highlights</h3><div class="related-papers">${selected.map(p=>`<a href="/publications/#${esc(p.id)}"><span>${esc(p.title)}</span><span aria-hidden="true">↗</span></a>`).join('')}</div>`:''}${writing}${!selected.length&&!writing?'<p class="research-note">Papers and project links will appear here when available.</p>':''}</div></section>`;}).join('')}<div class="research-end"><a class="text-link" href="/publications/">All publications <span aria-hidden="true">↗</span></a></div></div>`;
+function researchSection(topic) {
+  const {summary, tags} = researchCopy[topic];
+  const selected = highlightedPublications(topic);
+  const writing = researchWriting(topic);
+  const highlights = selected.length ? `
+    <h3 class="eyebrow related-heading">Highlights</h3>
+    <div class="related-papers">${selected.map(p => `<a href="/publications/#${esc(p.id)}">${esc(p.title)}</a>`).join('')}</div>` : '';
+  const note = !highlights && !writing ? '<p class="research-note">Papers and project links will appear here when available.</p>' : '';
+  return `
+  <section class="research-detail" id="${ids[topic]}">
+    <div class="research-detail-intro">
+      <div class="research-detail-copy">
+        <h2>${esc(topic)}</h2>
+        <p>${esc(summary)}</p>
+        <div class="topic-tags">${tags.map(tag => `<span>${esc(tag)}</span>`).join('')}</div>
+      </div>
+      ${visual(topic)}
+    </div>
+    ${highlights}${writing}${note}
+  </section>`;
+}
+
+const research = `
+  ${pageHeading('Research')}
+  <nav class="section-index" aria-label="Research areas">${topics.map(topic => `<a href="#${ids[topic]}">${esc(topic)}</a>`).join('')}</nav>
+  ${topics.map(researchSection).join('')}
+  <div class="research-end"><a class="text-link" href="/publications/">All publications</a></div>`;
 
 const years=[...new Set(publications.map(p=>p.year))];
 const publicationPage = `<div class="wrap">${pageHeading('Publications')}<div class="publication-toolbar"><div class="filters" role="group" aria-label="Filter publications by research area">${['All',...topics].map(t=>`<button data-topic-filter="${t}" aria-pressed="${t==='All'}">${esc(t==='All'?'All research':t)}</button>`).join('')}</div><label class="search-label"><span class="sr-only">Search publications by title, author, or keyword</span><span aria-hidden="true">⌕</span><input id="publication-search" type="search" placeholder="Search papers…" autocomplete="off"></label></div><div class="publication-meta"><p id="results-count" aria-live="polite">${publications.length} publications</p><div class="publication-profile-links">${link('Google Scholar',site.scholar)}${link('arXiv',site.arxiv)}</div></div><div class="publication-list">${years.map(year=>`<section class="year-group" data-year-group aria-labelledby="year-${year}"><h2 id="year-${year}">${year}</h2><div>${publications.filter(p=>p.year===year).map(p=>paper(p)).join('')}</div></section>`).join('')}</div><div id="no-results" class="empty-state" hidden><h2>No matching papers.</h2><p>Try another title, author, or research area.</p><button class="button" data-clear-search>Clear filters</button></div><p class="source-note">Preprints are labeled. Journal, conference, and recording links are included where available.</p></div>`;

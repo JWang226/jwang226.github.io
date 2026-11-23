@@ -178,7 +178,6 @@ main strong { font-weight: 600; }
   padding: .65rem 0 1.1rem;
   border-top: 1px solid var(--rule);
 }
-.section-index a > span, .related-papers a > span[aria-hidden],
 .paper-links a > span, .text-link > span[aria-hidden], button > span[aria-hidden],
 .publication-profile-links a > span, .blog-entry h2 a > span[aria-hidden],
 .research-writing h4 a > span, .cv-talk-links a > span {
@@ -188,8 +187,15 @@ main strong { font-weight: 600; }
   border-top: 1px solid var(--rule);
 }
 .research-detail, .blog-entry, .cv-section { padding-block: 1.2rem; }
+.research-detail-intro { display: grid; gap: .75rem 1rem; align-items: start; }
 .research-detail h2 { margin-bottom: .5rem; }
 .research-detail-copy > p { max-width: 56ch; }
+.research-note { color: var(--muted); margin-top: .9rem; }
+
+@media (min-width: 34rem) {
+  .research-detail-intro { grid-template-columns: minmax(0, 1fr) 10rem; }
+  .research-detail-intro .research-visual { align-self: center; }
+}
 .topic-tags, .blog-meta > div {
   color: var(--muted);
   font-size: .875rem;
@@ -297,7 +303,7 @@ button:hover, button[aria-pressed="true"] { border-color: var(--accent); color: 
   .cv-talk-entry, .cv-entry { break-inside: avoid; }
 }
 
-/* Three compact illustrations in the homepage's existing research section. */
+/* Research illustrations on the homepage and Research page. */
 .research-links {
   display: grid;
   grid-template-columns: repeat(3, minmax(0, 1fr));
@@ -369,10 +375,10 @@ button:hover, button[aria-pressed="true"] { border-color: var(--accent); color: 
 }
 
 @media (prefers-reduced-motion: no-preference) and (hover: hover) and (pointer: fine) {
-  .research-card:is(:hover, :has(.research-card-link:focus-visible)) .hawking-particle {
+  :is(.research-card:is(:hover, :has(.research-card-link:focus-visible)), .research-detail .research-visual:hover) .hawking-particle {
     animation: hawking-travel 6s linear infinite var(--pair-delay, 0s);
   }
-  .research-card:is(:hover, :has(.research-card-link:focus-visible)) .hawking-birth {
+  :is(.research-card:is(:hover, :has(.research-card-link:focus-visible)), .research-detail .research-visual:hover) .hawking-birth {
     animation: hawking-birth 6s ease-out infinite var(--pair-delay, 0s);
   }
 }

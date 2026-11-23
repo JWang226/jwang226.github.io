@@ -60,4 +60,4 @@ The workflow installs the locked dependencies, builds into `dist/`, checks the o
 
 For deployment settings and troubleshooting, see GitHub's [custom Pages workflows documentation](https://docs.github.com/en/pages/getting-started-with-github-pages/using-custom-workflows-with-github-pages) and [user-site setup instructions](https://docs.github.com/en/pages/getting-started-with-github-pages/creating-a-github-pages-site). The primary custom domain is `wangjinzhao.com`; configure it in the repository's Pages settings and keep `data/site.json` in sync if it changes.
 
-The three homepage illustrations autoplay while visible on phones and touch devices. On desktop, they support hover, click, and keyboard activation. They respect reduced-motion preferences and pause when the page is hidden.
+The three illustrations on the homepage and Research page autoplay while visible on phones and touch devices. On desktop, they support hover, click, and keyboard activation. They respect reduced-motion preferences and pause when the page is hidden.
