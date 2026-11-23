@@ -64,8 +64,8 @@ function mountNetwork(network) {
     const state = networkFrame(elapsed);
     for (const {element,layer,index} of nodes) {
       const value = state.activations[layer][index], intensity = clamp(value);
-      element.setAttribute('fill',blend([245,243,236],[139,52,43],intensity));
-      element.setAttribute('stroke',blend([91,98,91],[139,52,43],intensity));
+      element.setAttribute('fill',blend([36,35,32],[239,163,145],intensity));
+      element.setAttribute('stroke',blend([153,148,132],[239,163,145],intensity));
       element.dataset.activation = value.toFixed(4);
     }
     for (const {element,layer,source,weight,x1,y1,x2,y2} of cursors) {

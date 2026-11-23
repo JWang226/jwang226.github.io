@@ -15,12 +15,12 @@ npm run serve
 
 Open [localhost:4173](http://localhost:4173). Rebuild after editing source files and refresh the browser. The generated website is in `dist/`; edit source files rather than generated HTML. `npm run check` validates the built website.
 
-After layout changes, check all five pages at 320, 360, 390, and 430 pixels wide, plus 844 × 390 landscape. Verify the mobile menu, publication search and filters, and CV year toggles. Phone controls use at least 44-pixel tap areas and the search input uses 16-pixel text.
+After layout changes, check all five pages at 320, 360, 390, and 430 pixels wide, plus 844 × 390 landscape. Verify navigation, publication search and filters, and CV year toggles. Phone controls use at least 44-pixel tap areas and the search input uses 16-pixel text.
 
 ## Edit content
 
 - `data/site.json`: name, affiliation, social links, site URL, and search description.
-- `data/publications.json`: publication metadata and verified links. Follow the structure of an existing entry; keep stable arXiv IDs in `id`, author names in `authors`, topic names in `topics`, the original arXiv year in `preprintYear`, and the publication or acceptance year in `year`. A journal uses `{ "name": "...", "url": "..." }`; use `null` for an unpublished preprint. Conference, recording, slides, and code links belong in the `links` array as `{ "label": "...", "url": "..." }`. `projectWebsite` adds a Project website link; the homepage cloning highlight uses that URL when available. `featured` selects highlighted papers. Use the `Quantum` and `Gravity` topic classifications; add `AI` only for relevant work.
+- `data/publications.json`: publication metadata and verified links. Follow the structure of an existing entry; keep stable arXiv IDs in `id`, author names in `authors`, topic names in `topics`, the original arXiv year in `preprintYear`, and the publication or acceptance year in `year`. A journal uses `{ "name": "...", "url": "..." }`; use `null` for an unpublished preprint. Conference, recording, slides, and code links belong in the `links` array as `{ "label": "...", "url": "..." }`. `projectWebsite` adds a Project website link. `featured` selects highlighted papers. Use the `Quantum` and `Gravity` topic classifications; add `AI` only for relevant work.
 - `data/research-highlights.json`: ordered publication IDs for each research area’s Highlights list. These selections are independent of publication dates and homepage featured papers.
 - `data/presentations.json`: the full CV presentation list, grouped by year and month. An optional `eventUrl` links an event title directly (including organizer entries). A `talkUrl` matches a verified resource in `data/talks.json`; `presenter` explicitly credits a presentation delivered by someone else.
 - `data/talks.json`: verified talk resources and recordings, linked to publications by `arxivIds`. Add each recording to the relevant paper’s `links` array as well. Identify every `speaker`; coauthor talks require a recording and use `Coauthor talk · Speaker Name` labels. Omit coauthor event links and CV entries without a verified recording.
@@ -29,7 +29,7 @@ After layout changes, check all five pages at 320, 360, 390, and 430 pixels wide
 - `scripts/build.mjs`: page copy, research descriptions, and the online CV.
 - `assets/`: styles, scripts, fonts, and images.
 
-The CV page groups presentations into collapsible years, with the newest year expanded by default. Year links open their target group. **Print / Save PDF** includes every year and restores the screen’s expanded groups afterward. The supplied source CV is not published: its phone number and referee contact details are excluded from the public version, and the current affiliation reflects the owner's confirmed update. Update the online CV in `scripts/build.mjs` when experience changes.
+The CV page groups presentations into collapsible years, with the newest year expanded by default. Year links open their target group. **Print / Save PDF** includes every year and restores the screen’s expanded groups afterward. The online CV excludes phone numbers and referee contact details. Update it in `scripts/build.mjs` when experience changes.
 
 ### Add a blog post
 
@@ -60,4 +60,4 @@ The workflow installs the locked dependencies, builds into `dist/`, checks the o
 
 For deployment settings and troubleshooting, see GitHub's [custom Pages workflows documentation](https://docs.github.com/en/pages/getting-started-with-github-pages/using-custom-workflows-with-github-pages) and [user-site setup instructions](https://docs.github.com/en/pages/getting-started-with-github-pages/creating-a-github-pages-site). The primary custom domain is `wangjinzhao.com`; configure it in the repository's Pages settings and keep `data/site.json` in sync if it changes.
 
-Research illustrations autoplay while visible on phones and touch devices, with no animation buttons. Desktop illustrations support hover, click, and keyboard activation. System reduced-motion preferences and hidden-page pauses are respected.
+The three homepage illustrations autoplay while visible on phones and touch devices. On desktop, they support hover, click, and keyboard activation. They respect reduced-motion preferences and pause when the page is hidden.
